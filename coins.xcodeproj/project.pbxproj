@@ -282,7 +282,7 @@
 				DEVELOPMENT_TEAM = 77GB23Q8MR;
 				INFOPLIST_FILE = coins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.coins;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrh.coins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,7 +297,7 @@
 				DEVELOPMENT_TEAM = 77GB23Q8MR;
 				INFOPLIST_FILE = coins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.coins;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrh.coins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

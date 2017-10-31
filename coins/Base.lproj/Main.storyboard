@@ -111,7 +111,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="a2o-gz-jXg"/>
                     <connections>
-                        <outlet property="tableView" destination="gb2-Mz-EBY" id="qeH-2q-Fr2"/>
+                        <outlet property="coinHoldingTable" destination="gb2-Mz-EBY" id="nDB-nT-goR"/>
                         <outlet property="totalLabel" destination="tCW-6u-aiO" id="j3a-60-xoL"/>
                     </connections>
                 </viewController>

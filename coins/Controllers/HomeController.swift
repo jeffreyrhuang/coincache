@@ -10,13 +10,14 @@ import UIKit
 
 class HomeController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var coinHoldingTable: UITableView!
     @IBOutlet weak var totalLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        coinHoldingTable.dataSource = self
+        coinHoldingTable.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,11 +26,17 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? CoinHoldingCell {
+            let coinHolding = DataService.instance.getCoinHoldings()[indexPath.row]
+            cell.updateViews(coinHolding: coinHolding)
+            return cell
+        } else {
+            return CoinHoldingCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return DataService.instance.getCoinHoldings().count
     }
 
 

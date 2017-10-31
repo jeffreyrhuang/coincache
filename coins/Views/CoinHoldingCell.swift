@@ -11,6 +11,10 @@ import UIKit
 class CoinHoldingCell: UITableViewCell {
     
     // outlets for cell parts..
+    
+    func updateViews(coinHolding: CoinHolding) {
+        
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

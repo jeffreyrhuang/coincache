@@ -12,8 +12,12 @@ class CoinHoldingCell: UITableViewCell {
     
     // outlets for cell parts..
     
+   
+    @IBOutlet weak var coinHoldingLogo: UIImageView!
+    
+    
     func updateViews(coinHolding: CoinHolding) {
-        
+        coinHoldingLogo.image = UIImage(named: coinHolding.coinLogo)
     }
 
     override func awakeFromNib() {

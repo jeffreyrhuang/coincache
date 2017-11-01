@@ -11,12 +11,13 @@ import Foundation
 struct CoinHolding {
     private(set) public var coinName: String
     private(set) public var coinSymbol: String
-    // coin logo
+    private(set) public var coinLogo: String
     private(set) public var amount: Double
     
-    init(coinName: String, coinSymbol: String, amount: Double) {
+    init(coinName: String, coinSymbol: String, coinLogo: String, amount: Double) {
         self.coinName = coinName
         self.coinSymbol = coinSymbol
+        self.coinLogo = coinLogo
         self.amount = amount
     }
     

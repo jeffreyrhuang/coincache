@@ -26,7 +26,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? CoinHoldingCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CoinHoldingCell") as? CoinHoldingCell {
             let coinHolding = DataService.instance.getCoinHoldings()[indexPath.row]
             cell.updateViews(coinHolding: coinHolding)
             return cell

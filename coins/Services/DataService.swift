@@ -12,8 +12,9 @@ class DataService {
     static let instance = DataService()
     
     private let coinHoldings = [
-        CoinHolding(coinName: "Bitcoin", coinSymbol: "BTC", amount: 10.5),
-        CoinHolding(coinName: "Monero", coinSymbol: "XMR", amount: 3)
+        CoinHolding(coinName: "Bitcoin", coinSymbol: "BTC", coinLogo: "bitcoin.png", amount: 10.5),
+        CoinHolding(coinName: "Monero", coinSymbol: "XMR", coinLogo: "monero.png", amount: 3),
+        CoinHolding(coinName: "Litecoin", coinSymbol: "LTC", coinLogo: "litecoin.png", amount: 10)
     ]
     
     func getCoinHoldings() -> [CoinHolding] {

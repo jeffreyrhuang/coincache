@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PortfolioController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var coinHoldingTable: UITableView!
     @IBOutlet weak var totalLabel: UILabel!

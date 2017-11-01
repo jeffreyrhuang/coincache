@@ -57,15 +57,15 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="0Ny-wK-g8q" kind="relationship" relationship="viewControllers" id="Kws-nG-mVQ"/>
+                        <segue destination="0bj-NB-nV4" kind="relationship" relationship="viewControllers" id="Kws-nG-mVQ"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34" y="4"/>
+            <point key="canvasLocation" x="-990" y="0.0"/>
         </scene>
-        <!--Portfolio-->
+        <!--CoinCache-->
         <scene sceneID="mJn-ww-Qvo">
             <objects>
                 <viewController id="0Ny-wK-g8q" customClass="PortfolioController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Net Worth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCW-6u-aiO">
-                                        <rect key="frame" x="101" y="0.0" width="173" height="120"/>
+                                        <rect key="frame" x="101" y="72" width="173" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
@@ -164,7 +164,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IVq-8e-sb9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Portfolio" id="a2o-gz-jXg"/>
+                    <navigationItem key="navigationItem" title="CoinCache" id="Cf9-50-DE6"/>
                     <connections>
                         <outlet property="coinHoldingTable" destination="gb2-Mz-EBY" id="nDB-nT-goR"/>
                         <outlet property="totalLabel" destination="tCW-6u-aiO" id="j3a-60-xoL"/>
@@ -173,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgY-AT-OS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-340.47976011994007"/>
+            <point key="canvasLocation" x="750" y="-340"/>
         </scene>
         <!--Coin Details Controller-->
         <scene sceneID="eCf-Hf-EJK">
@@ -188,7 +188,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhD-PW-g68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1491" y="-337"/>
+            <point key="canvasLocation" x="1462" y="-340"/>
+        </scene>
+        <!--Portfolio-->
+        <scene sceneID="urP-Np-0iv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0bj-NB-nV4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Portfolio" id="a2o-gz-jXg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NZ6-jM-Ed8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Ny-wK-g8q" kind="relationship" relationship="rootViewController" id="Bfp-qm-ju5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dCO-ke-4pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="-340"/>
         </scene>
     </scenes>
     <resources>

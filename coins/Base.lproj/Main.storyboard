@@ -168,17 +168,17 @@
                     <connections>
                         <outlet property="coinHoldingTable" destination="gb2-Mz-EBY" id="nDB-nT-goR"/>
                         <outlet property="totalLabel" destination="tCW-6u-aiO" id="j3a-60-xoL"/>
-                        <segue destination="6o2-WR-DHG" kind="show" id="cGp-e8-pFt"/>
+                        <segue destination="6o2-WR-DHG" kind="show" identifier="CoinDetailsController" id="cGp-e8-pFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgY-AT-OS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-340.47976011994007"/>
         </scene>
-        <!--View Controller-->
+        <!--Coin Details Controller-->
         <scene sceneID="eCf-Hf-EJK">
             <objects>
-                <viewController id="6o2-WR-DHG" sceneMemberID="viewController">
+                <viewController id="6o2-WR-DHG" customClass="CoinDetailsController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wbc-n0-IHk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

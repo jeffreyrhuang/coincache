@@ -38,6 +38,18 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataService.instance.getCoinHoldings().count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let coinHolding = DataService.instance.getCoinHoldings()[indexPath.row]
+        performSegue(withIdentifier: "CoinDetailsController", sender: coinHolding)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let coinDetailsController = segue.destination as? CoinDetailsController {
+            assert(sender as? CoinHolding != nil)
+            coinDetailsController.initCoinDetail(coin: sender as! CoinHolding)
+        }
+    }
 
 
 }

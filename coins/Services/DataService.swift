@@ -20,4 +20,8 @@ class DataService {
     func getCoinHoldings() -> [CoinHolding] {
         return coinHoldings
     }
+    
+    func getCoinDetail(forCoinSymbol symbol: String) -> CoinDetail {
+        return CoinDetail(marketCap: "100B", supply: "16M")
+    }
 }

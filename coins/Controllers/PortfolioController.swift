@@ -46,6 +46,11 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let coinDetailsController = segue.destination as? CoinDetailsController {
+            // to change back bar title for next view
+            let barBtn = UIBarButtonItem()
+            barBtn.title = ""
+            navigationItem.backBarButtonItem = barBtn
+            
             assert(sender as? CoinHolding != nil)
             coinDetailsController.initCoinDetail(coin: sender as! CoinHolding)
         }

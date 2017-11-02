@@ -36,6 +36,8 @@ class CoinDetailsController: UIViewController {
     
     func initCoinDetail(coin: CoinHolding) {
         coinDetail = DataService.instance.getCoinDetail(forCoinSymbol: coin.coinSymbol)
+        
+        navigationItem.title = coin.coinName
     }
 
 }

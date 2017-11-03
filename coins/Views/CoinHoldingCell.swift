@@ -11,13 +11,21 @@ import UIKit
 class CoinHoldingCell: UITableViewCell {
     
     // outlets for cell parts..
-    
-   
-    @IBOutlet weak var coinHoldingLogo: UIImageView!
-    
+
+    @IBOutlet weak var coinLogo: UIImageView!
+    @IBOutlet weak var coinSymbol: UILabel!
+    @IBOutlet weak var coinName: UILabel!
+    @IBOutlet weak var quantity: UILabel!
+    @IBOutlet weak var value: UILabel!
+    @IBOutlet weak var price: UILabel!
     
     func updateViews(coinHolding: CoinHolding) {
-        coinHoldingLogo.image = UIImage(named: coinHolding.coinLogo)
+        coinLogo.image = UIImage(named: coinHolding.coinLogo)
+        coinSymbol.text = coinHolding.coinSymbol
+        coinName.text = coinHolding.coinName
+        quantity.text = "\(coinHolding.quantity)"
+        value.text = "\(coinHolding.quantity * coinHolding.price)"
+        price.text = "\(coinHolding.price)"
     }
 
     override func awakeFromNib() {

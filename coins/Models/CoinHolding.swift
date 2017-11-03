@@ -12,13 +12,15 @@ struct CoinHolding {
     private(set) public var coinName: String
     private(set) public var coinSymbol: String
     private(set) public var coinLogo: String
-    private(set) public var amount: Double
+    private(set) public var quantity: Double
+    private(set) public var price: Double
     
-    init(coinName: String, coinSymbol: String, coinLogo: String, amount: Double) {
+    init(coinName: String, coinSymbol: String, coinLogo: String, quantity: Double, price: Double) {
         self.coinName = coinName
         self.coinSymbol = coinSymbol
         self.coinLogo = coinLogo
-        self.amount = amount
+        self.quantity = quantity
+        self.price = price
     }
     
 }

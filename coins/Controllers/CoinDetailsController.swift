@@ -10,7 +10,7 @@ import UIKit
 
 class CoinDetailsController: UIViewController {
     
-    private(set) public var coinDetail: CoinDetail!
+    var selectedCoin: CoinHolding? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +34,10 @@ class CoinDetailsController: UIViewController {
     }
     */
     
-    func initCoinDetail(coin: CoinHolding) {
-        coinDetail = DataService.instance.getCoinDetail(forCoinSymbol: coin.coinSymbol)
-        
-        navigationItem.title = coin.coinName
-    }
+//    func initCoinDetail(coin: CoinHolding) {
+//        selectedCoin = DataService.instance.getCoinDetail(forCoinSymbol: coin.coinSymbol)
+//
+//        navigationItem.title = coin.name
+//    }
 
 }

@@ -20,9 +20,9 @@ class CoinHoldingCell: UITableViewCell {
     @IBOutlet weak var price: UILabel!
     
     func updateViews(coinHolding: CoinHolding) {
-        coinLogo.image = UIImage(named: coinHolding.coinLogo)
-        coinSymbol.text = coinHolding.coinSymbol
-        coinName.text = coinHolding.coinName
+        coinLogo.image = UIImage(named: coinHolding.logo)
+        coinSymbol.text = coinHolding.symbol
+        coinName.text = coinHolding.name
         quantity.text = "\(coinHolding.quantity)"
         value.text = "\(coinHolding.quantity * coinHolding.price)"
         price.text = "\(coinHolding.price)"

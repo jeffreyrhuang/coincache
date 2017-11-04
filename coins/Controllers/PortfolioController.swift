@@ -39,6 +39,8 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
             response in
             if response.result.isSuccess {
                 print("Successful call to API")
+                let tickerJSON : JSON = JSON(response.result.value!)
+                print(tickerJSON)
             } else {
                 print("Connection Issues")
             }
@@ -69,15 +71,13 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let coinDetailsController = segue.destination as? CoinDetailsController {
-            // to change back bar title for next view
-            let barBtn = UIBarButtonItem()
-            barBtn.title = ""
-            navigationItem.backBarButtonItem = barBtn
-            
-            assert(sender as? CoinHolding != nil)
-            coinDetailsController.initCoinDetail(coin: sender as! CoinHolding)
-        }
+        let coinDetailsController = segue.destination as! CoinDetailsController
+        // to change back bar title for next view
+        let barBtn = UIBarButtonItem()
+        barBtn.title = ""
+        navigationItem.backBarButtonItem = barBtn
+        
+        coinDetailsController.selectedCoin = sender as! CoinHolding
     }
 
 

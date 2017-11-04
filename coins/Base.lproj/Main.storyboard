@@ -10,6 +10,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
+            <string>Avenir-Light</string>
             <string>Avenir-Medium</string>
         </array>
     </customFonts>
@@ -101,8 +102,8 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKg-R1-YB1">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="37" height="44.5"/>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                                    <rect key="frame" x="0.0" y="24.5" width="36.5" height="44.5"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -119,7 +120,7 @@
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5G-OI-ysB">
                                                                     <rect key="frame" x="0.0" y="24.5" width="76" height="44.5"/>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -143,16 +144,16 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="69"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSn-j8-M6y">
-                                                            <rect key="frame" x="10" y="10" width="50" height="49"/>
+                                                            <rect key="frame" x="15" y="15" width="40" height="39"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="JOD-C9-jj1"/>
-                                                        <constraint firstItem="ZSn-j8-M6y" firstAttribute="leading" secondItem="FuN-EX-ujz" secondAttribute="leading" constant="10" id="Mpg-Ih-4HL"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ZSn-j8-M6y" secondAttribute="trailing" constant="10" id="X8F-Fa-Udo"/>
-                                                        <constraint firstItem="ZSn-j8-M6y" firstAttribute="top" secondItem="FuN-EX-ujz" secondAttribute="top" constant="10" id="bzC-Zo-4vJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="ZSn-j8-M6y" secondAttribute="bottom" constant="10" id="j8D-ms-rWe"/>
+                                                        <constraint firstItem="ZSn-j8-M6y" firstAttribute="leading" secondItem="FuN-EX-ujz" secondAttribute="leading" constant="15" id="Mpg-Ih-4HL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ZSn-j8-M6y" secondAttribute="trailing" constant="15" id="X8F-Fa-Udo"/>
+                                                        <constraint firstItem="ZSn-j8-M6y" firstAttribute="top" secondItem="FuN-EX-ujz" secondAttribute="top" constant="15" id="bzC-Zo-4vJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ZSn-j8-M6y" secondAttribute="bottom" constant="15" id="j8D-ms-rWe"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

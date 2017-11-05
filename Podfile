@@ -8,5 +8,6 @@ target 'coins' do
   # Pods for coins
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'RealmSwift'
 
 end

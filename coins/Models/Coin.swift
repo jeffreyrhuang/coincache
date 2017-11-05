@@ -8,9 +8,26 @@
 
 import Foundation
 import RealmSwift
+import ObjectMapper
 
-class Coin: Object {
-    @objc dynamic var name: String = ""
-    @objc dynamic var symbol: String = ""
-    @objc dynamic var price: Double = 0
+class Coin:Object, Mappable {
+    @objc dynamic var id = ""
+    @objc dynamic var name = ""
+    @objc dynamic var symbol = ""
+    @objc dynamic var price = 0
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        id      <- map["id"]
+        name    <- map["name"]
+        symbol  <- map["symbol"]
+        price   <- map["price"]
+    }
 }

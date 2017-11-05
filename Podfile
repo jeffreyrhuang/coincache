@@ -7,7 +7,8 @@ target 'coins' do
 
   # Pods for coins
   pod 'Alamofire'
-  pod 'SwiftyJSON'
+  pod 'AlamofireObjectMapper'
+  pod 'ObjectMapper'
   pod 'RealmSwift'
 
 end

@@ -8,7 +8,9 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
+import AlamofireObjectMapper
+import ObjectMapper
+import RealmSwift
 
 class PortfolioController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -19,6 +21,9 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // For Realm browser
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         coinHoldingTable.dataSource = self
         coinHoldingTable.delegate = self
@@ -35,12 +40,23 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     
     func getTickerData(url: String, parameters: [String:String]?) {
         
-        Alamofire.request(url, method: .get).responseJSON {
-            response in
+        Alamofire.request(url, method: .get).responseArray { (response: DataResponse<[Coin]>) in
             if response.result.isSuccess {
+                
                 print("Successful call to API")
-                let tickerJSON : JSON = JSON(response.result.value!)
-                print(tickerJSON)
+                let coinArray = response.result.value
+                do {
+                    let realm = try Realm()
+                    try realm.write {
+                        for coin in coinArray! {
+                            realm.add(coin, update: true)
+                        }
+                    }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+                
+            
             } else {
                 print("Connection Issues")
             }

@@ -19,13 +19,13 @@ class CoinHoldingCell: UITableViewCell {
     @IBOutlet weak var value: UILabel!
     @IBOutlet weak var price: UILabel!
     
-    func updateViews(coinHolding: CoinHolding) {
-        coinLogo.image = UIImage(named: coinHolding.logo)
-        coinSymbol.text = coinHolding.symbol
-        coinName.text = coinHolding.name
-        quantity.text = "\(coinHolding.quantity)"
-        value.text = "\(coinHolding.quantity * coinHolding.price)"
-        price.text = "\(coinHolding.price)"
+    func updateViews(ownedCoin: Coin) {
+//        coinLogo.image = UIImage(named: ownedCoin.logo)
+        coinSymbol.text = ownedCoin.symbol
+        coinName.text = ownedCoin.name
+        quantity.text = "\(ownedCoin.quantity)"
+        value.text = "\(ownedCoin.quantity * Double(ownedCoin.price_usd)!)"
+        price.text = "\(ownedCoin.price_usd)"
     }
 
     override func awakeFromNib() {

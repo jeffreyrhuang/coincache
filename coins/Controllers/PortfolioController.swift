@@ -19,7 +19,8 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var coinHoldingTable: UITableView!
     @IBOutlet weak var totalLabel: UILabel!
     
-
+    let realm = try! Realm()
+    lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("owned = true") }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
         coinHoldingTable.delegate = self
         
         getTickerData(url: TICKER_API, parameters: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,8 +71,8 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CoinHoldingCell") as? CoinHoldingCell {
-            let coinHolding = DataService.instance.getCoinHoldings()[indexPath.row]
-            cell.updateViews(coinHolding: coinHolding)
+            let coin = ownedCoins[indexPath.row]
+            cell.updateViews(ownedCoin: coin)
             return cell
         } else {
             return CoinHoldingCell()
@@ -78,12 +80,12 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataService.instance.getCoinHoldings().count
+        return ownedCoins.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let coinHolding = DataService.instance.getCoinHoldings()[indexPath.row]
-        performSegue(withIdentifier: "CoinDetailsController", sender: coinHolding)
+        let selectedCoin = ownedCoins[indexPath.row]
+        performSegue(withIdentifier: "CoinDetailsController", sender: selectedCoin)
     }
     
     // MARK: Segues
@@ -100,7 +102,7 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
             barBtn.title = ""
             navigationItem.backBarButtonItem = barBtn
             
-            coinDetailsController.selectedCoin = sender as! CoinHolding
+            coinDetailsController.selectedCoin = sender as! Coin
         }
     }
 

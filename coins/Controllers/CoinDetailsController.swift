@@ -10,7 +10,7 @@ import UIKit
 
 class CoinDetailsController: UIViewController {
     
-    var selectedCoin: CoinHolding? = nil
+    var selectedCoin: Coin?
 
     override func viewDidLoad() {
         super.viewDidLoad()

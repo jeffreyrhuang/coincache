@@ -19,6 +19,8 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var coinHoldingTable: UITableView!
     @IBOutlet weak var totalLabel: UILabel!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,14 +88,20 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: Segues
     
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "AddCoin", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let coinDetailsController = segue.destination as! CoinDetailsController
-        // to change back bar title for next view
-        let barBtn = UIBarButtonItem()
-        barBtn.title = ""
-        navigationItem.backBarButtonItem = barBtn
-        
-        coinDetailsController.selectedCoin = sender as! CoinHolding
+        if segue.identifier == "CoinDetailsController" {
+            let coinDetailsController = segue.destination as! CoinDetailsController
+            // to change back bar title for next view
+            let barBtn = UIBarButtonItem()
+            barBtn.title = ""
+            navigationItem.backBarButtonItem = barBtn
+            
+            coinDetailsController.selectedCoin = sender as! CoinHolding
+        }
     }
 
 

@@ -212,7 +212,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IVq-8e-sb9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="CoinCache" id="Cf9-50-DE6"/>
+                    <navigationItem key="navigationItem" title="CoinCache" id="Cf9-50-DE6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofJ-HM-Cpx">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="0Ny-wK-g8q" id="rLR-wF-R3Z"/>
+                                <segue destination="Ok2-K2-3p4" kind="presentation" identifier="AddCoin" id="T3j-Nk-Ip4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="coinHoldingTable" destination="gb2-Mz-EBY" id="nDB-nT-goR"/>
                         <outlet property="totalLabel" destination="tCW-6u-aiO" id="j3a-60-xoL"/>
@@ -222,6 +229,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgY-AT-OS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-340.47976011994007"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="qte-ja-8nV">
+            <objects>
+                <tableViewController id="yVc-L1-QXU" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8pE-hp-Kb7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pzW-kG-S3r">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pzW-kG-S3r" id="g5R-ah-ux9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yVc-L1-QXU" id="Y2k-P7-iON"/>
+                            <outlet property="delegate" destination="yVc-L1-QXU" id="8va-qp-Dop"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="5dR-h3-PpE"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSg-30-CQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1702" y="-1063"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LhA-r8-6ZN">
+            <objects>
+                <navigationController id="Ok2-K2-3p4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T8D-4t-GIg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yVc-L1-QXU" kind="relationship" relationship="rootViewController" id="UpQ-OM-9JL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OSM-ji-Ihl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-1063"/>
         </scene>
         <!--Coin Details Controller-->
         <scene sceneID="eCf-Hf-EJK">

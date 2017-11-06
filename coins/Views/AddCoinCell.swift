@@ -9,6 +9,12 @@
 import UIKit
 
 class AddCoinCell: UITableViewCell {
+    
+    @IBOutlet weak var coinName: UILabel!
+    
+    func updateViews(coin: Coin) {
+        coinName.text = coin.name
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

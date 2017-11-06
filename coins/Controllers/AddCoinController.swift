@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddCoinController: UITableViewController {
+    // use do catch
+    let realm = try! Realm()
+    var allCoins: Results<Coin>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.allCoins = self.realm.objects(Coin.self)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +35,23 @@ class AddCoinController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return allCoins!.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "AddCoinCell") as? AddCoinCell {
+            let coin = allCoins![indexPath.row]
+            cell.updateViews(coin: coin)
+            return cell
+        } else {
+            return AddCoinCell()
+        }
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

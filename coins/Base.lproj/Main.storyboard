@@ -171,6 +171,7 @@
                                             <outlet property="coinLogo" destination="ZSn-j8-M6y" id="FVj-VK-805"/>
                                             <outlet property="coinName" destination="kKg-R1-YB1" id="RYf-3T-bum"/>
                                             <outlet property="coinSymbol" destination="BpO-0u-Ln6" id="Ng3-Tj-asi"/>
+                                            <outlet property="percent_change" destination="GxD-WR-qHV" id="l9c-eT-MVU"/>
                                             <outlet property="price" destination="ozJ-rp-W6j" id="F9s-pi-hks"/>
                                             <outlet property="quantity" destination="rpW-nx-pXS" id="pR5-3e-Csd"/>
                                             <outlet property="value" destination="o5G-OI-ysB" id="eDc-bR-4IH"/>
@@ -230,21 +231,36 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-340.47976011994007"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Add Coin-->
         <scene sceneID="qte-ja-8nV">
             <objects>
-                <tableViewController id="yVc-L1-QXU" sceneMemberID="viewController">
+                <tableViewController id="yVc-L1-QXU" customClass="AddCoinController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8pE-hp-Kb7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pzW-kG-S3r">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pzW-kG-S3r" customClass="AddCoinCell" customModule="coins" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pzW-kG-S3r" id="g5R-ah-ux9">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTB-dp-BAz">
+                                            <rect key="frame" x="313" y="3" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                            <state key="normal" title="Add"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ie-h2-ucN">
+                                            <rect key="frame" x="56" y="8" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -253,11 +269,19 @@
                             <outlet property="delegate" destination="yVc-L1-QXU" id="8va-qp-Dop"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="5dR-h3-PpE"/>
+                    <navigationItem key="navigationItem" title="Add Coin" id="5dR-h3-PpE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wpc-yO-wtN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="Qbx-hP-ODB" kind="unwind" unwindAction="cancelAddCoinWithUnwindSegue:" id="YaT-yG-0GS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSg-30-CQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Qbx-hP-ODB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1702" y="-1063"/>
+            <point key="canvasLocation" x="2581.5999999999999" y="-1051.1244377811095"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LhA-r8-6ZN">
@@ -266,6 +290,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T8D-4t-GIg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="yVc-L1-QXU" kind="relationship" relationship="rootViewController" id="UpQ-OM-9JL"/>
@@ -273,7 +301,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSM-ji-Ihl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-1063"/>
+            <point key="canvasLocation" x="1745" y="-1051"/>
         </scene>
         <!--Coin Details Controller-->
         <scene sceneID="eCf-Hf-EJK">
@@ -288,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhD-PW-g68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="-340"/>
+            <point key="canvasLocation" x="1746" y="-340"/>
         </scene>
         <!--Portfolio-->
         <scene sceneID="urP-Np-0iv">
@@ -312,7 +340,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCO-ke-4pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="-340"/>
+            <point key="canvasLocation" x="-73" y="-340"/>
         </scene>
     </scenes>
     <resources>

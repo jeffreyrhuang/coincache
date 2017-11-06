@@ -18,6 +18,7 @@ class CoinHoldingCell: UITableViewCell {
     @IBOutlet weak var quantity: UILabel!
     @IBOutlet weak var value: UILabel!
     @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var percent_change: UILabel!
     
     func updateViews(ownedCoin: Coin) {
 //        coinLogo.image = UIImage(named: ownedCoin.logo)
@@ -26,6 +27,7 @@ class CoinHoldingCell: UITableViewCell {
         quantity.text = "\(ownedCoin.quantity)"
         value.text = "\(ownedCoin.quantity * Double(ownedCoin.price_usd)!)"
         price.text = "\(ownedCoin.price_usd)"
+        percent_change.text = "\(ownedCoin.percent_change_7d) %"
     }
 
     override func awakeFromNib() {

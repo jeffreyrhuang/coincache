@@ -90,6 +90,10 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: Segues
     
+    @IBAction func cancelAddCoin(unwindSegue: UIStoryboardSegue) {
+        
+    }
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "AddCoin", sender: self)
     }

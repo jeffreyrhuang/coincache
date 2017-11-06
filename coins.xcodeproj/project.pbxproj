@@ -17,7 +17,8 @@
 		1F8B4B291FA628BA0034ECC9 /* CoinHoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B4B281FA628BA0034ECC9 /* CoinHoldingCell.swift */; };
 		1FD688811FAA74A3004E6DC2 /* CoinDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD688801FAA74A3004E6DC2 /* CoinDetailsController.swift */; };
 		1FD688831FAA847C004E6DC2 /* CoinDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD688821FAA847C004E6DC2 /* CoinDetail.swift */; };
-		1FF65C6A1FA81CC900DFA149 /* CoinHolding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF65C691FA81CC900DFA149 /* CoinHolding.swift */; };
+		1FDB489E1FB0A84100BB5773 /* AddCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB489D1FB0A84100BB5773 /* AddCoinCell.swift */; };
+		1FDB48A01FB0A8AA00BB5773 /* AddCoinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB489F1FB0A8AA00BB5773 /* AddCoinController.swift */; };
 		AF331BCB5519A562A5063D93 /* Pods_coins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E071B85EE05ABD5B6FD5CB70 /* Pods_coins.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +35,8 @@
 		1F8B4B281FA628BA0034ECC9 /* CoinHoldingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHoldingCell.swift; sourceTree = "<group>"; };
 		1FD688801FAA74A3004E6DC2 /* CoinDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsController.swift; sourceTree = "<group>"; };
 		1FD688821FAA847C004E6DC2 /* CoinDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetail.swift; sourceTree = "<group>"; };
-		1FF65C691FA81CC900DFA149 /* CoinHolding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinHolding.swift; sourceTree = "<group>"; };
+		1FDB489D1FB0A84100BB5773 /* AddCoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinCell.swift; sourceTree = "<group>"; };
+		1FDB489F1FB0A8AA00BB5773 /* AddCoinController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinController.swift; sourceTree = "<group>"; };
 		455D9A078ADC4D56500CEB3B /* Pods-coins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coins.release.xcconfig"; path = "Pods/Target Support Files/Pods-coins/Pods-coins.release.xcconfig"; sourceTree = "<group>"; };
 		9C03D6A566C2368B67831419 /* Pods-coins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coins/Pods-coins.debug.xcconfig"; sourceTree = "<group>"; };
 		E071B85EE05ABD5B6FD5CB70 /* Pods_coins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				1F7A49DB1FA18D9900C4C1A5 /* PortfolioController.swift */,
 				1F7A49DD1FA18D9900C4C1A5 /* ChartsController.swift */,
 				1FD688801FAA74A3004E6DC2 /* CoinDetailsController.swift */,
+				1FDB489F1FB0A8AA00BB5773 /* AddCoinController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -98,7 +101,6 @@
 		1F8B4B261FA626F80034ECC9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1FF65C691FA81CC900DFA149 /* CoinHolding.swift */,
 				1FD688821FAA847C004E6DC2 /* CoinDetail.swift */,
 				1F5E60DC1FAEA87F004B96C9 /* Coin.swift */,
 			);
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				1F8B4B281FA628BA0034ECC9 /* CoinHoldingCell.swift */,
+				1FDB489D1FB0A84100BB5773 /* AddCoinCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,12 +271,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F5E60DD1FAEA87F004B96C9 /* Coin.swift in Sources */,
-				1FF65C6A1FA81CC900DFA149 /* CoinHolding.swift in Sources */,
 				1F7A49DE1FA18D9900C4C1A5 /* ChartsController.swift in Sources */,
 				1F7A49DA1FA18D9900C4C1A5 /* AppDelegate.swift in Sources */,
 				1FD688811FAA74A3004E6DC2 /* CoinDetailsController.swift in Sources */,
 				1F8B4B291FA628BA0034ECC9 /* CoinHoldingCell.swift in Sources */,
+				1FDB48A01FB0A8AA00BB5773 /* AddCoinController.swift in Sources */,
 				1F7A49DC1FA18D9900C4C1A5 /* PortfolioController.swift in Sources */,
+				1FDB489E1FB0A84100BB5773 /* AddCoinCell.swift in Sources */,
 				1FD688831FAA847C004E6DC2 /* CoinDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

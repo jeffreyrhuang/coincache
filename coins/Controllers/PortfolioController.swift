@@ -94,10 +94,6 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "AddCoin", sender: self)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CoinDetailsController" {
             let coinDetailsController = segue.destination as! CoinDetailsController

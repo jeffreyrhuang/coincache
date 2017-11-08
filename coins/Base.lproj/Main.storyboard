@@ -218,7 +218,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofJ-HM-Cpx">
                             <connections>
                                 <action selector="addButtonPressed:" destination="0Ny-wK-g8q" id="rLR-wF-R3Z"/>
-                                <segue destination="Ok2-K2-3p4" kind="presentation" identifier="AddCoin" id="T3j-Nk-Ip4"/>
+                                <segue destination="Ok2-K2-3p4" kind="presentation" id="9eS-um-oDz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -9,22 +9,29 @@
 import UIKit
 import RealmSwift
 
-class AddCoinController: UITableViewController, UISearchBarDelegate {
+class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     // use do catch
     let realm = try! Realm()
     var allCoins: Results<Coin>?
     var filteredCoins: Results<Coin>?
     var isSearching = false
 
+    
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet var addCoinTable: UITableView!
+    @IBOutlet weak var addCoinTable: UITableView!
     
+    @IBAction func addButtonPressed(_ sender: Any) {
+        
+    }
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.allCoins = self.realm.objects(Coin.self)
         
+        addCoinTable.dataSource = self
+        addCoinTable.delegate = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
 
@@ -41,24 +48,24 @@ class AddCoinController: UITableViewController, UISearchBarDelegate {
         if searchBar.text == nil || searchBar.text == "" {
             isSearching = false
             view.endEditing(true)
-            tableView.reloadData()
+            addCoinTable.reloadData()
         } else {
             isSearching = true
             let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchBar.text!)
             filteredCoins = realm.objects(Coin.self).filter(predicate)
-            tableView.reloadData()
+            addCoinTable.reloadData()
         }
     }
     
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if isSearching {
             return filteredCoins!.count
@@ -66,7 +73,7 @@ class AddCoinController: UITableViewController, UISearchBarDelegate {
         return allCoins!.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AddCoinCell") as? AddCoinCell {
             
             if isSearching {
@@ -85,50 +92,4 @@ class AddCoinController: UITableViewController, UISearchBarDelegate {
             return AddCoinCell()
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

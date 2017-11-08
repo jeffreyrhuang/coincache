@@ -39,6 +39,7 @@ class Coin:Object, Mappable {
         id                  <- map["id"]
         name                <- map["name"]
         symbol              <- map["symbol"]
+        rank                <- map["rank"]
         price_usd           <- map["price_usd"]
         price_btc           <- map["price_btc"]
         market_cap_usd      <- map["market_cap_usd"]

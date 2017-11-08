@@ -217,8 +217,7 @@
                     <navigationItem key="navigationItem" title="CoinCache" id="Cf9-50-DE6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofJ-HM-Cpx">
                             <connections>
-                                <action selector="addButtonPressed:" destination="0Ny-wK-g8q" id="rLR-wF-R3Z"/>
-                                <segue destination="Ok2-K2-3p4" kind="presentation" id="9eS-um-oDz"/>
+                                <segue destination="vCe-gm-R3i" kind="presentation" id="KOg-lY-3tJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -233,88 +232,96 @@
             <point key="canvasLocation" x="749.60000000000002" y="-340.47976011994007"/>
         </scene>
         <!--Add Coin-->
-        <scene sceneID="qte-ja-8nV">
+        <scene sceneID="kQD-CM-xgy">
             <objects>
-                <tableViewController id="yVc-L1-QXU" customClass="AddCoinController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8pE-hp-Kb7">
+                <viewController id="VVX-PR-Tjj" customClass="AddCoinController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vyd-xw-t1t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="SOM-hb-4Uc">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddCoinCell" id="pzW-kG-S3r" customClass="AddCoinCell" customModule="coins" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pzW-kG-S3r" id="g5R-ah-ux9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTB-dp-BAz">
-                                            <rect key="frame" x="313" y="3" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                            <state key="normal" title="Add"/>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ie-h2-ucN">
-                                            <rect key="frame" x="56" y="8" width="156" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hKp-oi-ao6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="09h-Lo-DeN"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JeX-8s-Zsx">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddCoinCell" id="HAL-xB-ChG" customClass="AddCoinCell" customModule="coins" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HAL-xB-ChG" id="daY-x7-ojH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB9-Ix-VBy">
+                                                    <rect key="frame" x="60" y="11" width="148" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziI-Bc-YNa">
+                                                    <rect key="frame" x="314" y="6" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Add"/>
+                                                    <connections>
+                                                        <action selector="addButtonPressed:" destination="VVX-PR-Tjj" eventType="touchUpInside" id="N6A-cA-hv8"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q60-bi-uK3">
+                                                    <rect key="frame" x="10" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="GB9-Ix-VBy" id="aSj-jc-a1J"/>
+                                            <outlet property="rank" destination="q60-bi-uK3" id="Kde-Kq-mVb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="coinName" destination="9ie-h2-ucN" id="bDr-lJ-HuH"/>
+                                    <outlet property="dataSource" destination="VVX-PR-Tjj" id="smH-Cv-abL"/>
+                                    <outlet property="delegate" destination="VVX-PR-Tjj" id="soD-kN-R7C"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="yVc-L1-QXU" id="Y2k-P7-iON"/>
-                            <outlet property="delegate" destination="yVc-L1-QXU" id="8va-qp-Dop"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Add Coin" id="5dR-h3-PpE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wpc-yO-wtN">
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JeX-8s-Zsx" firstAttribute="bottom" secondItem="bYF-d2-rCV" secondAttribute="bottom" id="J3N-Nq-mGk"/>
+                            <constraint firstItem="JeX-8s-Zsx" firstAttribute="top" secondItem="hKp-oi-ao6" secondAttribute="bottom" id="XoN-Ex-ofx"/>
+                            <constraint firstItem="hKp-oi-ao6" firstAttribute="leading" secondItem="bYF-d2-rCV" secondAttribute="leading" id="etR-MO-6El"/>
+                            <constraint firstItem="hKp-oi-ao6" firstAttribute="trailing" secondItem="bYF-d2-rCV" secondAttribute="trailing" id="kla-fB-7MQ"/>
+                            <constraint firstItem="JeX-8s-Zsx" firstAttribute="trailing" secondItem="bYF-d2-rCV" secondAttribute="trailing" id="qUm-mu-NW6"/>
+                            <constraint firstItem="hKp-oi-ao6" firstAttribute="top" secondItem="bYF-d2-rCV" secondAttribute="top" id="xTI-Gt-6kr"/>
+                            <constraint firstItem="JeX-8s-Zsx" firstAttribute="leading" secondItem="bYF-d2-rCV" secondAttribute="leading" id="zzk-9L-cmX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bYF-d2-rCV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Coin" id="773-7z-Dig">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wOI-wo-YQI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Qbx-hP-ODB" kind="unwind" unwindAction="cancelAddCoinWithUnwindSegue:" id="YaT-yG-0GS"/>
+                                <segue destination="cdr-IU-sXe" kind="unwind" unwindAction="cancelAddCoinWithUnwindSegue:" id="0YR-Kb-kIE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addCoinTable" destination="8pE-hp-Kb7" id="Cm9-Q0-e4I"/>
-                        <outlet property="searchBar" destination="SOM-hb-4Uc" id="gcY-fd-oUo"/>
+                        <outlet property="addCoinTable" destination="JeX-8s-Zsx" id="9H5-MK-rTO"/>
+                        <outlet property="searchBar" destination="hKp-oi-ao6" id="v6U-1b-otl"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bSg-30-CQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Qbx-hP-ODB" userLabel="Exit" sceneMemberID="exit"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TWN-QI-ogj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cdr-IU-sXe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2581.5999999999999" y="-1051.1244377811095"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="LhA-r8-6ZN">
-            <objects>
-                <navigationController id="Ok2-K2-3p4" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T8D-4t-GIg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="yVc-L1-QXU" kind="relationship" relationship="rootViewController" id="UpQ-OM-9JL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OSM-ji-Ihl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1745" y="-1051"/>
+            <point key="canvasLocation" x="2544.8000000000002" y="-1051.1244377811095"/>
         </scene>
         <!--Coin Details Controller-->
         <scene sceneID="eCf-Hf-EJK">
@@ -354,6 +361,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCO-ke-4pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-73" y="-340"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LIP-wy-FF1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vCe-gm-R3i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qak-iX-r4l">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VVX-PR-Tjj" kind="relationship" relationship="rootViewController" id="9TF-ut-4vd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gus-UK-DS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="-1051"/>
         </scene>
     </scenes>
     <resources>

@@ -9,15 +9,24 @@
 import UIKit
 import RealmSwift
 
-class AddCoinController: UITableViewController {
+class AddCoinController: UITableViewController, UISearchBarDelegate {
     // use do catch
     let realm = try! Realm()
     var allCoins: Results<Coin>?
+    var filteredCoins: Results<Coin>?
+    var isSearching = false
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet var addCoinTable: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.allCoins = self.realm.objects(Coin.self)
+        
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,10 +35,21 @@ class AddCoinController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // Mark: - Search bar
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            isSearching = false
+            view.endEditing(true)
+            tableView.reloadData()
+        } else {
+            isSearching = true
+            let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchBar.text!)
+            filteredCoins = realm.objects(Coin.self).filter(predicate)
+            tableView.reloadData()
+        }
     }
+    
 
     // MARK: - Table view data source
 
@@ -40,14 +60,27 @@ class AddCoinController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if isSearching {
+            return filteredCoins!.count
+        }
         return allCoins!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AddCoinCell") as? AddCoinCell {
-            let coin = allCoins![indexPath.row]
-            cell.updateViews(coin: coin)
-            return cell
+            
+            if isSearching {
+                let coin = filteredCoins![indexPath.row]
+                cell.updateViews(coin: coin)
+                return cell
+                
+            } else {
+                let coin = allCoins![indexPath.row]
+                cell.updateViews(coin: coin)
+                return cell
+            }
+            
+            
         } else {
             return AddCoinCell()
         }

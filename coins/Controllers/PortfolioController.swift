@@ -34,11 +34,6 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
         getTickerData(url: TICKER_API, parameters: nil)
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: Networking
     
@@ -85,7 +80,7 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCoin = ownedCoins[indexPath.row]
-        performSegue(withIdentifier: "CoinDetailsController", sender: selectedCoin)
+        performSegue(withIdentifier: "CoinDetailsController", sender: self)
     }
     
     // MARK: Segues

@@ -29,6 +29,12 @@ class Coin:Object, Mappable {
     @objc dynamic var owned: Bool = false
     @objc dynamic var amount: Double = 0.0
     
+    // Computed value
+//    @objc dynamic var value: Double {
+//        let x =  Double(price_usd)! * amount
+//        return Double(round(100 * x) / 100)
+//    }
+//
     
     override static func primaryKey() -> String? {
         return "id"

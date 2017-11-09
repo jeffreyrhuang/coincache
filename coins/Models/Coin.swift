@@ -24,7 +24,7 @@ class Coin:Object, Mappable {
     
     // Personal variables
     @objc dynamic var owned: Bool = false
-    @objc dynamic var quantity: Double = 0.0
+    @objc dynamic var amount: Double = 0.0
     
     
     override static func primaryKey() -> String? {

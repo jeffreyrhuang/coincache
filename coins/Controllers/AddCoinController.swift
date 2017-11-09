@@ -38,15 +38,10 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
     func coinAdded(sender: AddCoinCell) {
         if let indexPath = addCoinTable.indexPath(for: sender) {
             if isSearching {
-                let coin = filteredCoins![indexPath.row]
-                print(coin.name)
-                coinToBeAdded = coin
+                coinToBeAdded = filteredCoins![indexPath.row]
                 
             } else {
-                let coin = allCoins![indexPath.row]
-                print(coin.name)
-                coinToBeAdded = coin
-                
+                coinToBeAdded = allCoins![indexPath.row]
             }
 //            performSegue(withIdentifier: "goToCoinAmount", sender: self)
             

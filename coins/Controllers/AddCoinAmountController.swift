@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddCoinAmountController: UIViewController {
     
@@ -16,6 +17,20 @@ class AddCoinAmountController: UIViewController {
     @IBOutlet weak var amountTextField: UITextField!
     
     @IBAction func submitButtonPressed(_ sender: Any) {
+        
+        do {
+            let realm = try Realm()
+            if let coin =  realm.object(ofType: Coin.self, forPrimaryKey: addedCoin?.id) {
+                try realm.write {
+                    coin.owned = true
+                    coin.amount = Double(amountTextField.text!)!
+                }
+            }
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
         self.performSegue(withIdentifier: "unwindToPortfolio", sender: self)
     }
     

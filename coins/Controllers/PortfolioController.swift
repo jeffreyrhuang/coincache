@@ -90,7 +90,7 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func unwindToPortfolio(segue: UIStoryboardSegue) {
-        
+        self.coinHoldingTable.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

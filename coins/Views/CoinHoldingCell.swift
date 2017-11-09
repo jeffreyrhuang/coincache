@@ -24,8 +24,8 @@ class CoinHoldingCell: UITableViewCell {
 //        coinLogo.image = UIImage(named: ownedCoin.logo)
         coinSymbol.text = ownedCoin.symbol
         coinName.text = ownedCoin.name
-        quantity.text = "\(ownedCoin.quantity)"
-        value.text = "\(ownedCoin.quantity * Double(ownedCoin.price_usd)!)"
+        quantity.text = "\(ownedCoin.amount)"
+        value.text = "\(ownedCoin.amount * Double(ownedCoin.price_usd)!)"
         price.text = "\(ownedCoin.price_usd)"
         percent_change.text = "\(ownedCoin.percent_change_7d) %"
     }

@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, AddCoinDelegate {
     // use do catch
     let realm = try! Realm()
     var allCoins: Results<Coin>?
@@ -20,10 +20,25 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var addCoinTable: UITableView!
     
-    @IBAction func addButtonPressed(_ sender: Any) {
-        
-    }
+//    @IBAction func addButtonPressed(_ sender: Any) {
+//        print("unwinding")
+//        self.performSegue(withIdentifier: "unwindToPortfolio", sender: self)
+//    }
     
+    func coinAdded(sender: AddCoinCell) {
+        if let indexPath = addCoinTable.indexPath(for: sender) {
+            if isSearching {
+                let coin = filteredCoins![indexPath.row]
+                print(coin.name)
+                
+            } else {
+                let coin = allCoins![indexPath.row]
+                print(coin.name)
+                
+            }
+        }
+    }
+
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +90,7 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AddCoinCell") as? AddCoinCell {
+            cell.delegate = self
             
             if isSearching {
                 let coin = filteredCoins![indexPath.row]

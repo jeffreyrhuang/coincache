@@ -269,7 +269,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Add"/>
                                                     <connections>
-                                                        <action selector="addButtonPressed:" destination="VVX-PR-Tjj" eventType="touchUpInside" id="N6A-cA-hv8"/>
+                                                        <action selector="addButtonPressed:" destination="HAL-xB-ChG" eventType="touchUpInside" id="Q6z-pN-6Qu"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q60-bi-uK3">
@@ -365,6 +365,7 @@
         <!--Navigation Controller-->
         <scene sceneID="LIP-wy-FF1">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gus-UK-DS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vCe-gm-R3i" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qak-iX-r4l">
@@ -380,9 +381,8 @@
                         <segue destination="VVX-PR-Tjj" kind="relationship" relationship="rootViewController" id="9TF-ut-4vd"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gus-UK-DS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1679" y="-1051"/>
+            <point key="canvasLocation" x="1745" y="-1051"/>
         </scene>
     </scenes>
     <resources>

@@ -8,10 +8,21 @@
 
 import UIKit
 
+@objc protocol AddCoinDelegate: class {
+    func coinAdded(sender: AddCoinCell)
+}
+
 class AddCoinCell: UITableViewCell {
+    
+    weak var delegate: AddCoinDelegate?
 
     @IBOutlet weak var rank: UILabel!
     @IBOutlet weak var name: UILabel!
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        delegate?.coinAdded(sender: self)
+    }
+    
     
     func updateViews(coin: Coin) {
         name.text = coin.name

@@ -89,6 +89,10 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
+    @IBAction func unwindToPortfolio(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CoinDetailsController" {
             let coinDetailsController = segue.destination as! CoinDetailsController

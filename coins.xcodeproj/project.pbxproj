@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4019121FB3D8A900C6CF1D /* AddCoinAmountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4019111FB3D8A900C6CF1D /* AddCoinAmountController.swift */; };
 		1F5E60DD1FAEA87F004B96C9 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5E60DC1FAEA87F004B96C9 /* Coin.swift */; };
 		1F7A49DA1FA18D9900C4C1A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A49D91FA18D9900C4C1A5 /* AppDelegate.swift */; };
 		1F7A49DC1FA18D9900C4C1A5 /* PortfolioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A49DB1FA18D9900C4C1A5 /* PortfolioController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F4019111FB3D8A900C6CF1D /* AddCoinAmountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinAmountController.swift; sourceTree = "<group>"; };
 		1F5E60DC1FAEA87F004B96C9 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		1F7A49D61FA18D9900C4C1A5 /* coins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7A49D91FA18D9900C4C1A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				1F7A49DD1FA18D9900C4C1A5 /* ChartsController.swift */,
 				1FD688801FAA74A3004E6DC2 /* CoinDetailsController.swift */,
 				1FDB489F1FB0A8AA00BB5773 /* AddCoinController.swift */,
+				1F4019111FB3D8A900C6CF1D /* AddCoinAmountController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				1F5E60DD1FAEA87F004B96C9 /* Coin.swift in Sources */,
 				1F7A49DE1FA18D9900C4C1A5 /* ChartsController.swift in Sources */,
 				1F7A49DA1FA18D9900C4C1A5 /* AppDelegate.swift in Sources */,
+				1F4019121FB3D8A900C6CF1D /* AddCoinAmountController.swift in Sources */,
 				1FD688811FAA74A3004E6DC2 /* CoinDetailsController.swift in Sources */,
 				1F8B4B291FA628BA0034ECC9 /* CoinHoldingCell.swift in Sources */,
 				1FDB48A01FB0A8AA00BB5773 /* AddCoinController.swift in Sources */,

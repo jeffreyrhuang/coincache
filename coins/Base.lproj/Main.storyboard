@@ -270,6 +270,7 @@
                                                     <state key="normal" title="Add"/>
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="HAL-xB-ChG" eventType="touchUpInside" id="Q6z-pN-6Qu"/>
+                                                        <segue destination="Z1K-0h-bkj" kind="show" id="aW9-rA-A2m"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q60-bi-uK3">
@@ -323,6 +324,50 @@
             </objects>
             <point key="canvasLocation" x="2544.8000000000002" y="-1051.1244377811095"/>
         </scene>
+        <!--Add Coin Amount Controller-->
+        <scene sceneID="yh8-K4-oOZ">
+            <objects>
+                <viewController id="Z1K-0h-bkj" customClass="AddCoinAmountController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xWk-G2-9rJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dU8-xN-3bL">
+                                <rect key="frame" x="139" y="339" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plw-1P-n2B">
+                                <rect key="frame" x="151" y="406" width="72" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="Z1K-0h-bkj" eventType="touchUpInside" id="IsF-Gx-JNq"/>
+                                    <segue destination="1YZ-7E-wpn" kind="unwind" identifier="unwindToPortfolio" unwindAction="unwindToPortfolioWithSegue:" id="zO9-YF-dAB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2t-yX-6kB">
+                                <rect key="frame" x="131" y="260" width="112" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="HMI-Ja-OER"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="dU8-xN-3bL" id="ku7-0k-cNX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CED-Kd-6bB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1YZ-7E-wpn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3368.8000000000002" y="-1051.1244377811095"/>
+        </scene>
         <!--Coin Details Controller-->
         <scene sceneID="eCf-Hf-EJK">
             <objects>
@@ -371,6 +416,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qak-iX-r4l">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

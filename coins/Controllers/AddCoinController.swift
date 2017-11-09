@@ -19,11 +19,20 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var addCoinTable: UITableView!
+  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.allCoins = self.realm.objects(Coin.self)
+        
+        addCoinTable.dataSource = self
+        addCoinTable.delegate = self
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
+
+    }
     
-//    @IBAction func addButtonPressed(_ sender: Any) {
-//        print("unwinding")
-//        self.performSegue(withIdentifier: "unwindToPortfolio", sender: self)
-//    }
+    // Mark: - Delegate
     
     func coinAdded(sender: AddCoinCell) {
         if let indexPath = addCoinTable.indexPath(for: sender) {
@@ -37,24 +46,6 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
                 
             }
         }
-    }
-
-  
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.allCoins = self.realm.objects(Coin.self)
-        
-        addCoinTable.dataSource = self
-        addCoinTable.delegate = self
-        searchBar.delegate = self
-        searchBar.returnKeyType = UIReturnKeyType.done
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // Mark: - Search bar

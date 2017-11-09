@@ -15,6 +15,7 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
     var allCoins: Results<Coin>?
     var filteredCoins: Results<Coin>?
     var isSearching = false
+    var coinToBeAdded: Coin?
 
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -39,12 +40,16 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
             if isSearching {
                 let coin = filteredCoins![indexPath.row]
                 print(coin.name)
+                coinToBeAdded = coin
                 
             } else {
                 let coin = allCoins![indexPath.row]
                 print(coin.name)
+                coinToBeAdded = coin
                 
             }
+//            performSegue(withIdentifier: "goToCoinAmount", sender: self)
+            
         }
     }
 
@@ -97,6 +102,15 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
             
         } else {
             return AddCoinCell()
+        }
+    }
+    
+    // Mark: Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToCoinAmount" {
+            let addCoinAmountController = segue.destination as! AddCoinAmountController
+            
+            addCoinAmountController.addedCoin = coinToBeAdded
         }
     }
 }

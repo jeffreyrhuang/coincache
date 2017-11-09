@@ -9,7 +9,10 @@
 import UIKit
 
 class AddCoinAmountController: UIViewController {
+    
+    var addedCoin: Coin?
 
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
     
     @IBAction func submitButtonPressed(_ sender: Any) {
@@ -26,6 +29,8 @@ class AddCoinAmountController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        name.text = addedCoin?.name
+        
         
     }
 

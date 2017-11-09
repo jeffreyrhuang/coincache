@@ -270,7 +270,7 @@
                                                     <state key="normal" title="Add"/>
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="HAL-xB-ChG" eventType="touchUpInside" id="Q6z-pN-6Qu"/>
-                                                        <segue destination="Z1K-0h-bkj" kind="show" id="aW9-rA-A2m"/>
+                                                        <segue destination="Z1K-0h-bkj" kind="show" identifier="goToCoinAmount" id="aW9-rA-A2m"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q60-bi-uK3">
@@ -309,9 +309,6 @@
                     <navigationItem key="navigationItem" title="Add Coin" id="773-7z-Dig">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wOI-wo-YQI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="cdr-IU-sXe" kind="unwind" unwindAction="cancelAddCoinWithUnwindSegue:" id="0YR-Kb-kIE"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -320,7 +317,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWN-QI-ogj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="cdr-IU-sXe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2544.8000000000002" y="-1051.1244377811095"/>
         </scene>
@@ -339,6 +335,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2t-yX-6kB">
+                                <rect key="frame" x="131" y="260" width="112" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plw-1P-n2B">
                                 <rect key="frame" x="151" y="406" width="72" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -348,10 +351,10 @@
                                     <segue destination="1YZ-7E-wpn" kind="unwind" identifier="unwindToPortfolio" unwindAction="unwindToPortfolioWithSegue:" id="zO9-YF-dAB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2t-yX-6kB">
-                                <rect key="frame" x="131" y="260" width="112" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLh-G9-d2A">
+                                <rect key="frame" x="125" y="154" width="125" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -361,6 +364,7 @@
                     </view>
                     <connections>
                         <outlet property="amountTextField" destination="dU8-xN-3bL" id="ku7-0k-cNX"/>
+                        <outlet property="name" destination="rLh-G9-d2A" id="Y4w-zh-l0e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CED-Kd-6bB" userLabel="First Responder" sceneMemberID="firstResponder"/>

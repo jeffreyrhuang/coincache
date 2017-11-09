@@ -101,7 +101,7 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
             barBtn.title = ""
             navigationItem.backBarButtonItem = barBtn
             
-            coinDetailsController.selectedCoin = sender as! Coin
+            coinDetailsController.selectedCoin = sender as? Coin
         }
     }
 

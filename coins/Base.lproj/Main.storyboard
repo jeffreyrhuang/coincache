@@ -309,6 +309,9 @@
                     <navigationItem key="navigationItem" title="Add Coin" id="773-7z-Dig">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wOI-wo-YQI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="cdr-IU-sXe" kind="unwind" unwindAction="cancelAddCoinWithUnwindSegue:" id="7R9-s5-a9C"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -317,6 +320,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWN-QI-ogj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cdr-IU-sXe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2544.8000000000002" y="-1051.1244377811095"/>
         </scene>

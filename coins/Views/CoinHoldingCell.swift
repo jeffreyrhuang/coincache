@@ -21,7 +21,12 @@ class CoinHoldingCell: UITableViewCell {
     @IBOutlet weak var percent_change: UILabel!
     
     func updateViews(ownedCoin: Coin) {
-//        coinLogo.image = UIImage(named: ownedCoin.logo)
+        let logoImage = UIImage(named: ownedCoin.id)
+        if logoImage != nil {
+            coinLogo.image = logoImage
+        } else {
+            coinLogo.image = UIImage(named: "coinlogo")
+        }
         coinSymbol.text = ownedCoin.symbol
         coinName.text = ownedCoin.name
         quantity.text = "\(ownedCoin.amount)"

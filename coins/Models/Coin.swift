@@ -22,7 +22,10 @@ class Coin:Object, Mappable {
     @objc dynamic var percent_change_24h = ""
     @objc dynamic var percent_change_7d = ""
     
-    // Personal variables
+    // Optional
+    @objc dynamic var logo = ""
+    
+    // Variables set by user
     @objc dynamic var owned: Bool = false
     @objc dynamic var amount: Double = 0.0
     

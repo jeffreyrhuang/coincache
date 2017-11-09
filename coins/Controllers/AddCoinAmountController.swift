@@ -37,7 +37,7 @@ class AddCoinAmountController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        amountTextField.keyboardType = UIKeyboardType.numberPad
+        amountTextField.keyboardType = .decimalPad
         amountTextField.becomeFirstResponder()
     }
     

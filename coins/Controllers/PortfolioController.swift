@@ -17,7 +17,7 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     let TICKER_API = "https://api.coinmarketcap.com/v1/ticker/"
 
     @IBOutlet weak var coinHoldingTable: UITableView!
-    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var totalValueLabel: UILabel!
     
     let realm = try! Realm()
     lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("owned = true") }()

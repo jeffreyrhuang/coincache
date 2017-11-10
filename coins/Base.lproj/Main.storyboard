@@ -14,6 +14,9 @@
             <string>Avenir-Light</string>
             <string>Avenir-Medium</string>
         </array>
+        <array key="Menlo.ttc">
+            <string>Menlo-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Charts Controller-->
@@ -167,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="-990" y="0.0"/>
         </scene>
-        <!--CoinCache-->
+        <!--Portfolio Controller-->
         <scene sceneID="mJn-ww-Qvo">
             <objects>
                 <viewController id="0Ny-wK-g8q" customClass="PortfolioController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gb2-Mz-EBY" userLabel="CoinHoldingTable">
-                                <rect key="frame" x="0.0" y="250" width="375" height="417"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CoinHoldingCell" id="Bxm-1A-VCP" customClass="CoinHoldingCell" customModule="coins" customModuleProvider="target">
@@ -275,16 +278,22 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZr-Yb-iVA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net Worth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCW-6u-aiO">
-                                        <rect key="frame" x="126" y="108.5" width="123" height="33.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Portfolio Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCW-6u-aiO">
+                                        <rect key="frame" x="124.5" y="70" width="127" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$18,539.32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzx-7n-9ga">
+                                        <rect key="frame" x="103" y="97" width="169" height="33"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bt-ZM-1XF" userLabel="Table Header">
-                                        <rect key="frame" x="0.0" y="220" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="170" width="375" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZmJ-NC-ISo">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -326,14 +335,16 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Wzx-7n-9ga" firstAttribute="centerX" secondItem="OZr-Yb-iVA" secondAttribute="centerX" id="CTi-Gq-4On"/>
+                                    <constraint firstItem="Wzx-7n-9ga" firstAttribute="top" secondItem="tCW-6u-aiO" secondAttribute="bottom" constant="10" id="EM2-zg-3Us"/>
                                     <constraint firstAttribute="bottom" secondItem="1Bt-ZM-1XF" secondAttribute="bottom" id="Nbd-cr-OdT"/>
+                                    <constraint firstItem="tCW-6u-aiO" firstAttribute="centerX" secondItem="OZr-Yb-iVA" secondAttribute="centerX" id="a5U-CG-nZb"/>
+                                    <constraint firstItem="tCW-6u-aiO" firstAttribute="top" secondItem="OZr-Yb-iVA" secondAttribute="top" constant="70" id="eCh-hX-HnX"/>
                                     <constraint firstItem="1Bt-ZM-1XF" firstAttribute="leading" secondItem="OZr-Yb-iVA" secondAttribute="leading" id="gD7-x6-Cyy"/>
                                     <constraint firstAttribute="trailing" secondItem="1Bt-ZM-1XF" secondAttribute="trailing" id="gpC-e8-2Ej"/>
-                                    <constraint firstItem="tCW-6u-aiO" firstAttribute="centerY" secondItem="OZr-Yb-iVA" secondAttribute="centerY" id="uuF-VQ-ed2"/>
-                                    <constraint firstAttribute="height" constant="250" id="xx1-K7-p5O"/>
-                                    <constraint firstItem="tCW-6u-aiO" firstAttribute="centerX" secondItem="OZr-Yb-iVA" secondAttribute="centerX" id="ypi-9j-L9c"/>
+                                    <constraint firstAttribute="height" constant="200" id="xx1-K7-p5O"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -349,7 +360,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IVq-8e-sb9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="CoinCache" id="Cf9-50-DE6">
+                    <navigationItem key="navigationItem" id="Cf9-50-DE6">
                         <barButtonItem key="leftBarButtonItem" title="USD" id="90g-3E-rRj"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofJ-HM-Cpx">
                             <connections>
@@ -359,7 +370,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="coinHoldingTable" destination="gb2-Mz-EBY" id="nDB-nT-goR"/>
-                        <outlet property="totalLabel" destination="tCW-6u-aiO" id="j3a-60-xoL"/>
+                        <outlet property="totalValueLabel" destination="Wzx-7n-9ga" id="d9Y-8V-94H"/>
                         <segue destination="6o2-WR-DHG" kind="show" identifier="CoinDetailsController" id="cGp-e8-pFt"/>
                     </connections>
                 </viewController>

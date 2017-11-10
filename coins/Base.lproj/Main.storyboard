@@ -49,10 +49,11 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="347.67616191904051"/>
         </scene>
-        <!--Settings-->
+        <!--Table View Controller-->
         <scene sceneID="eeu-1b-kej">
             <objects>
-                <tableViewController title="Settings" id="aG6-4d-C0A" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KLK-wK-6PG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="aG6-4d-C0A" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0XW-Jz-b9c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,13 +123,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="xcU-qX-fFd"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KLK-wK-6PG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="1094"/>
+            <point key="canvasLocation" x="750" y="1093"/>
         </scene>
         <!--Settings-->
         <scene sceneID="WzJ-iz-hwR">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41g-q7-NzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="310-9m-3KN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="pKm-oX-qTa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r6t-qg-pWR">
@@ -144,7 +145,6 @@
                         <segue destination="aG6-4d-C0A" kind="relationship" relationship="rootViewController" id="WZr-DY-PFi"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="41g-q7-NzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-97" y="1094"/>
         </scene>
@@ -189,41 +189,30 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kBZ-Es-mx0">
                                                     <rect key="frame" x="70" y="0.0" width="305" height="69"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="MnC-Ne-iIF">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpO-0u-Ln6">
                                                             <rect key="frame" x="0.0" y="0.0" width="76.5" height="69"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpO-0u-Ln6">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="50.5" height="44.5"/>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKg-R1-YB1">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="41" height="44.5"/>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="Wcg-kA-NnJ">
+                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="tIh-DN-oo2">
                                                             <rect key="frame" x="76.5" y="0.0" width="76" height="69"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpW-nx-pXS">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="76" height="44.5"/>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5G-OI-ysB">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="76" height="39.5"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5G-OI-ysB">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="76" height="44.5"/>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpW-nx-pXS">
+                                                                    <rect key="frame" x="0.0" y="29.5" width="76" height="39.5"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-rp-W6j">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-rp-W6j">
                                                             <rect key="frame" x="152.5" y="0.0" width="76.5" height="69"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                                             <nil key="textColor"/>
@@ -265,12 +254,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="amount" destination="rpW-nx-pXS" id="pR5-3e-Csd"/>
                                             <outlet property="coinLogo" destination="ZSn-j8-M6y" id="FVj-VK-805"/>
-                                            <outlet property="coinName" destination="kKg-R1-YB1" id="RYf-3T-bum"/>
                                             <outlet property="coinSymbol" destination="BpO-0u-Ln6" id="Ng3-Tj-asi"/>
                                             <outlet property="percent_change" destination="GxD-WR-qHV" id="l9c-eT-MVU"/>
                                             <outlet property="price" destination="ozJ-rp-W6j" id="F9s-pi-hks"/>
-                                            <outlet property="quantity" destination="rpW-nx-pXS" id="pR5-3e-Csd"/>
                                             <outlet property="value" destination="o5G-OI-ysB" id="eDc-bR-4IH"/>
                                         </connections>
                                     </tableViewCell>
@@ -311,6 +299,7 @@
                         <viewLayoutGuide key="safeArea" id="IVq-8e-sb9"/>
                     </view>
                     <navigationItem key="navigationItem" title="CoinCache" id="Cf9-50-DE6">
+                        <barButtonItem key="leftBarButtonItem" title="USD" id="90g-3E-rRj"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofJ-HM-Cpx">
                             <connections>
                                 <segue destination="vCe-gm-R3i" kind="presentation" id="KOg-lY-3tJ"/>

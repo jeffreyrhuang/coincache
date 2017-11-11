@@ -17,6 +17,7 @@ class AddCoinCell: UITableViewCell {
     weak var delegate: AddCoinDelegate?
 
     @IBOutlet weak var rank: UILabel!
+    @IBOutlet weak var symbol: UILabel!
     @IBOutlet weak var name: UILabel!
     
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -26,6 +27,7 @@ class AddCoinCell: UITableViewCell {
     
     func updateViews(coin: Coin) {
         name.text = coin.name
+        symbol.text = coin.symbol
         rank.text = coin.rank + "."
     }
 

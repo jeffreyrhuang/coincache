@@ -57,7 +57,7 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
             addCoinTable.reloadData()
         } else {
             isSearching = true
-            let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchBar.text!)
+            let predicate = NSPredicate(format: "name BEGINSWITH [c]%@ OR symbol BEGINSWITH [c]%@", searchBar.text!, searchBar.text!)
             filteredCoins = realm.objects(Coin.self).filter(predicate)
             addCoinTable.reloadData()
         }

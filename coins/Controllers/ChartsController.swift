@@ -10,27 +10,36 @@ import UIKit
 import Charts
 import RealmSwift
 
-class ChartsController: UIViewController {
+class ChartsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let realm = try! Realm()
-    lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("owned = true") }()
-
-    @IBOutlet weak var pieChart: PieChartView!
+    var ownedCoins: Results<Coin>?
+    var coins: [Coin] = []
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("view appearing")
-        setChart()
-    }
+    @IBOutlet weak var pieChart: PieChartView!
+    @IBOutlet weak var chartTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view loading")
         
+        self.ownedCoins = self.realm.objects(Coin.self).filter("owned = true")
+        coins = Array(ownedCoins!)
+    
+        chartTable.dataSource = self
+        chartTable.delegate = self
+        
+        setChart()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        coins = Array(ownedCoins!)
+        setChart()
+        self.chartTable.reloadData()
     }
     
     func setChart() {
         var dataEntries: [PieChartDataEntry] = []
-        let coins = Array(ownedCoins)
         
         let totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_btc) }
         
@@ -65,6 +74,27 @@ class ChartsController: UIViewController {
         pieChart.legend.enabled = false
  
         
+    }
+    
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return coins.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChartCoinCell") as? ChartCoinCell {
+            let coin = coins[indexPath.row]
+            cell.updateViews(coin: coin)
+            return cell
+            
+        } else {
+            return ChartCoinCell()
+        }
     }
 
 

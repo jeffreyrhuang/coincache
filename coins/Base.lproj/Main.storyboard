@@ -38,6 +38,40 @@
                                 <rect key="frame" x="0.0" y="433" width="375" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChartCoinCell" textLabel="m1Z-Vf-N9f" detailTextLabel="fkR-tR-Qtq" style="IBUITableViewCellStyleValue1" id="YDG-gk-7BY" customClass="ChartCoinCell" customModule="coins" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YDG-gk-7BY" id="1nJ-kB-TWi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m1Z-Vf-N9f">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fkR-tR-Qtq">
+                                                    <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="m1Z-Vf-N9f" id="VmH-Vk-Zhy"/>
+                                            <outlet property="percentage" destination="fkR-tR-Qtq" id="0JF-ao-Jb8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="sO9-f2-cjg"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="4YK-JL-ua9"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hhg-Ns-lvM" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="112" width="375" height="243"/>
@@ -50,6 +84,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9Uv-Es-N2N"/>
                     <connections>
+                        <outlet property="chartTable" destination="Arq-ed-2nG" id="dA0-Gd-a1v"/>
                         <outlet property="pieChart" destination="Hhg-Ns-lvM" id="lrl-C0-EfY"/>
                     </connections>
                 </viewController>
@@ -60,7 +95,6 @@
         <!--Table View Controller-->
         <scene sceneID="eeu-1b-kej">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KLK-wK-6PG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="aG6-4d-C0A" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0XW-Jz-b9c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -131,13 +165,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="xcU-qX-fFd"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KLK-wK-6PG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="1093"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WzJ-iz-hwR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="41g-q7-NzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="310-9m-3KN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="pKm-oX-qTa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r6t-qg-pWR">
@@ -153,6 +187,7 @@
                         <segue destination="aG6-4d-C0A" kind="relationship" relationship="rootViewController" id="WZr-DY-PFi"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41g-q7-NzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-97" y="1094"/>
         </scene>

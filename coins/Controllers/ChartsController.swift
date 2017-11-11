@@ -13,7 +13,7 @@ import RealmSwift
 class ChartsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let realm = try! Realm()
-    var ownedCoins: Results<Coin>?
+    lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("owned = true") }()
     var coins: [Coin] = []
     
     @IBOutlet weak var pieChart: PieChartView!
@@ -22,20 +22,20 @@ class ChartsController: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.ownedCoins = self.realm.objects(Coin.self).filter("owned = true")
-        coins = Array(ownedCoins!)
-    
         chartTable.dataSource = self
         chartTable.delegate = self
-        
-        setChart()
+
+        print("print view loading")
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        coins = Array(ownedCoins!)
+        coins = Array(ownedCoins)
+        coins.sort { $0.value > $1.value }
         setChart()
         self.chartTable.reloadData()
+        
+        print("view appearing")
     }
     
     func setChart() {
@@ -91,7 +91,8 @@ class ChartsController: UIViewController, UITableViewDataSource, UITableViewDele
             let coin = coins[indexPath.row]
             let totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_usd) }
             cell.name.text = coin.name
-            cell.percentage.text = "\(coin.value / totalValue * 100) %"
+            let percentageNumber = coin.value / totalValue * 100
+            cell.percentage.text = String(format: "%.1f", percentageNumber) + " %"
             return cell
             
         } else {

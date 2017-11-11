@@ -31,16 +31,14 @@ class ChartsController: UIViewController {
     func setChart() {
         var dataEntries: [PieChartDataEntry] = []
         let coins = Array(ownedCoins)
-        print(coins)
         
         let totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_btc) }
-        print(totalValue)
         
         for coin in coins {
             let percentage = coin.value / totalValue * 100
             dataEntries.append(PieChartDataEntry(value: percentage, label: coin.symbol))
         }
-
+        
         let dataSet = PieChartDataSet(values: dataEntries, label: "")
         let data = PieChartData(dataSet: dataSet)
         

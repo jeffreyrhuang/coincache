@@ -21,6 +21,13 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     
     let realm = try! Realm()
     lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("owned = true") }()
+    var totalValue: Double = 0.0
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let coins = Array(ownedCoins)
+        totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_usd) }
+        totalValueLabel.text = "\(totalValue)"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +37,6 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
         
         coinHoldingTable.dataSource = self
         coinHoldingTable.delegate = self
-        
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         
         getTickerData(url: TICKER_API, parameters: nil)
 

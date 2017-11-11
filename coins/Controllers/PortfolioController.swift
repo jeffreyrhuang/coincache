@@ -27,6 +27,8 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
         let coins = Array(ownedCoins)
         totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_usd) }
         totalValueLabel.text = "\(totalValue)"
+        
+        self.coinHoldingTable.reloadData()
     }
     
     override func viewDidLoad() {

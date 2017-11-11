@@ -445,10 +445,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziI-Bc-YNa">
-                                                    <rect key="frame" x="314" y="6" width="46" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziI-Bc-YNa">
+                                                    <rect key="frame" x="321" y="10" width="43" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Add"/>
+                                                    <state key="normal" title="Add" image="add-icon"/>
                                                     <connections>
                                                         <action selector="addButtonPressed:" destination="HAL-xB-ChG" eventType="touchUpInside" id="Q6z-pN-6Qu"/>
                                                         <segue destination="Z1K-0h-bkj" kind="show" identifier="goToCoinAmount" id="aW9-rA-A2m"/>
@@ -645,6 +645,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add-icon" width="20" height="20"/>
         <image name="first" width="27" height="16"/>
         <image name="second" width="20" height="21"/>
     </resources>

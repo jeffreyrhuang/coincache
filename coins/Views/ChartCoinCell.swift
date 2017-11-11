@@ -13,10 +13,6 @@ class ChartCoinCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var percentage: UILabel!
     
-    func updateViews(coin: Coin) {
-        name.text = coin.name
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

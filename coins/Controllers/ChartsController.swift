@@ -41,7 +41,7 @@ class ChartsController: UIViewController, UITableViewDataSource, UITableViewDele
     func setChart() {
         var dataEntries: [PieChartDataEntry] = []
         
-        let totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_btc) }
+        let totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_usd) }
         
         for coin in coins {
             let percentage = coin.value / totalValue * 100
@@ -89,7 +89,9 @@ class ChartsController: UIViewController, UITableViewDataSource, UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ChartCoinCell") as? ChartCoinCell {
             let coin = coins[indexPath.row]
-            cell.updateViews(coin: coin)
+            let totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_usd) }
+            cell.name.text = coin.name
+            cell.percentage.text = "\(coin.value / totalValue * 100) %"
             return cell
             
         } else {

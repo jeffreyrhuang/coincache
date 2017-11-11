@@ -31,6 +31,10 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
         coinHoldingTable.dataSource = self
         coinHoldingTable.delegate = self
         
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        
         getTickerData(url: TICKER_API, parameters: nil)
 
     }

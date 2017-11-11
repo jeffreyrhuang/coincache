@@ -14,28 +14,35 @@ class ChartsController: UIViewController {
 
     let realm = try! Realm()
     lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("owned = true") }()
-    
-    let sampleCoins = ["Bitcoin", "Dash", "Lisk", "Vertcoin"]
-    let coinValues = [6000.0, 500.0, 200.0, 3000.0]
-    
-    
+
     @IBOutlet weak var pieChart: PieChartView!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("view appearing")
+        setChart()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setChart()
+        print("view loading")
         
     }
     
     func setChart() {
         var dataEntries: [PieChartDataEntry] = []
+        let coins = Array(ownedCoins)
+        print(coins)
         
-        dataEntries.append(PieChartDataEntry(value: 6000.0, label: "Bitcoin"))
-        dataEntries.append(PieChartDataEntry(value: 4000.0, label: "Litecoin"))
+        let totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_btc) }
+        print(totalValue)
         
+        for coin in coins {
+            let percentage = coin.value / totalValue * 100
+            dataEntries.append(PieChartDataEntry(value: percentage, label: coin.symbol))
+        }
+
         let dataSet = PieChartDataSet(values: dataEntries, label: "")
         let data = PieChartData(dataSet: dataSet)
-        pieChart.data = data
         
         var colors: [UIColor] = []
         
@@ -50,6 +57,15 @@ class ChartsController: UIViewController {
         dataSet.colors = colors
         dataSet.entryLabelColor = .black
         dataSet.xValuePosition = .outsideSlice
+        dataSet.drawValuesEnabled = false
+        
+        pieChart.centerText = "Portfolio"
+        pieChart.noDataText = "No data available"
+        pieChart.transparentCircleColor = UIColor.clear
+        pieChart.chartDescription?.enabled = false
+        pieChart.data = data
+        pieChart.legend.enabled = false
+ 
         
     }
 

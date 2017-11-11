@@ -28,7 +28,7 @@ class CoinHoldingCell: UITableViewCell {
         }
         coinSymbol.text = ownedCoin.symbol
         amount.text = "\(ownedCoin.amount)"
-        value.text = "\(ownedCoin.amount * Double(ownedCoin.price_usd)!)"
+        value.text = "\(ownedCoin.amount * ownedCoin.price_usd)"
         price.text = "\(ownedCoin.price_usd)"
         percent_change.text = "\(ownedCoin.percent_change_7d) %"
         if Double(ownedCoin.percent_change_7d)! > 0 {

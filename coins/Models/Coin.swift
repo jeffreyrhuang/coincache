@@ -15,8 +15,8 @@ class Coin:Object, Mappable {
     @objc dynamic var name = ""
     @objc dynamic var symbol = ""
     @objc dynamic var rank = ""
-    @objc dynamic var price_usd = ""
-    @objc dynamic var price_btc = ""
+    @objc dynamic var price_usd: Double = 0.0
+    @objc dynamic var price_btc: Double = 0.0
     @objc dynamic var market_cap_usd = ""
     @objc dynamic var available_supply = ""
     @objc dynamic var percent_change_24h = ""
@@ -29,12 +29,17 @@ class Coin:Object, Mappable {
     @objc dynamic var owned: Bool = false
     @objc dynamic var amount: Double = 0.0
     
-    // Computed value
-//    @objc dynamic var value: Double {
-//        let x =  Double(price_usd)! * amount
-//        return Double(round(100 * x) / 100)
-//    }
-//
+    // Computed value   // IGNORED PROPERTY IN REALM?
+    @objc dynamic var value: Double {
+        get {
+            let x =  price_usd * amount
+            return round(100 * x) / 100
+        }
+        set {
+            self.value = price_usd * amount
+        }
+    }
+
     
     override static func primaryKey() -> String? {
         return "id"
@@ -49,8 +54,8 @@ class Coin:Object, Mappable {
         name                <- map["name"]
         symbol              <- map["symbol"]
         rank                <- map["rank"]
-        price_usd           <- map["price_usd"]
-        price_btc           <- map["price_btc"]
+        price_usd           <- (map["price_usd"], TransformOf<Double, String>(fromJSON: {Double($0!)}, toJSON: {$0.map { String($0)}}))
+        price_btc           <- (map["price_btc"], TransformOf<Double, String>(fromJSON: {Double($0!)}, toJSON: {$0.map { String($0)}}))
         market_cap_usd      <- map["market_cap_usd"]
         available_supply    <- map["available_supply"]
         percent_change_24h  <- map["percent_change_24h"]

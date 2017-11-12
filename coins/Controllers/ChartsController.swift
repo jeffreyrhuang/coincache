@@ -24,8 +24,6 @@ class ChartsController: UIViewController, UITableViewDataSource, UITableViewDele
         
         chartTable.dataSource = self
         chartTable.delegate = self
-
-        print("print view loading")
         
     }
     
@@ -50,18 +48,32 @@ class ChartsController: UIViewController, UITableViewDataSource, UITableViewDele
         
         let dataSet = PieChartDataSet(values: dataEntries, label: "")
         let data = PieChartData(dataSet: dataSet)
-        
+    
+        // Prepare colors
         var colors: [UIColor] = []
+        let gray = UIColor(red:0.30, green:0.30, blue:0.30, alpha:1.0)
+        let blue = UIColor(red:0.36, green:0.65, blue:0.85, alpha:1.0)
+        let orange = UIColor(red:0.98, green:0.64, blue:0.23, alpha:1.0)
+        let green = UIColor(red:0.38, green:0.74, blue:0.41, alpha:1.0)
+        let pink = UIColor(red:0.95, green:0.49, blue:0.69, alpha:1.0)
+        let brown = UIColor(red:0.70, green:0.57, blue:0.18, alpha:1.0)
+        let purple = UIColor(red:0.70, green:0.46, blue:0.70, alpha:1.0)
+        let yellow = UIColor(red:0.87, green:0.81, blue:0.25, alpha:1.0)
+        let red = UIColor(red:0.95, green:0.35, blue:0.33, alpha:1.0)
+        colors = [gray, blue, orange, green, pink, brown, purple, yellow, red]
+        var preparedColors: [UIColor] = []
+        let colorCount: Int = colors.count
+        var colorIndex: Int = 0
         
         for _ in 0..<dataEntries.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
+            preparedColors.append(colors[colorIndex])
+            colorIndex += 1
+            if colorIndex == colorCount {
+                colorIndex = 1 // cycle back but start with blue
+            }
         }
-        dataSet.colors = colors
+        
+        dataSet.colors = preparedColors
         dataSet.entryLabelColor = .black
         dataSet.xValuePosition = .outsideSlice
         dataSet.drawValuesEnabled = false
@@ -73,7 +85,6 @@ class ChartsController: UIViewController, UITableViewDataSource, UITableViewDele
         pieChart.data = data
         pieChart.legend.enabled = false
  
-        
     }
     
     // MARK: - Table view data source

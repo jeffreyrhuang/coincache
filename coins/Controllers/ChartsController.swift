@@ -79,9 +79,11 @@ class ChartsController: UIViewController, UITableViewDataSource, UITableViewDele
         dataSet.drawValuesEnabled = false
         
         pieChart.centerText = "Portfolio"
+//        pieChart.holeRadiusPercent = 0.25
         pieChart.noDataText = "No data available"
         pieChart.transparentCircleColor = UIColor.clear
         pieChart.chartDescription?.enabled = false
+        pieChart.highlightPerTapEnabled = false
         pieChart.data = data
         pieChart.legend.enabled = false
  
@@ -110,7 +112,19 @@ class ChartsController: UIViewController, UITableViewDataSource, UITableViewDele
             return ChartCoinCell()
         }
     }
-
-
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if let cell = chartTable.cellForRow(at: indexPath) {
+            if cell.isSelected {
+                print("cell is selected")
+                chartTable.deselectRow(at: indexPath, animated: false)
+                pieChart.highlightValue(nil)
+                return nil
+            } else {
+                pieChart.highlightValue(x: Double(indexPath.row), dataSetIndex: 0)
+            }
+        }
+        return indexPath
+    }
+    
 }
-

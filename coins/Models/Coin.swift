@@ -26,7 +26,7 @@ class Coin:Object, Mappable {
     @objc dynamic var logo = ""
     
     // Variables set by user
-    @objc dynamic var owned: Bool = false
+    @objc dynamic var owned: Bool = false  // FIX: overwritten back to default by api call
     @objc dynamic var amount: Double = 0.0
     
     // Computed value   // IGNORED PROPERTY IN REALM?

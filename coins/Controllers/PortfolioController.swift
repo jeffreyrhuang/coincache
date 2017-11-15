@@ -23,6 +23,8 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("owned = true") }()
     var totalValue: Double = 0.0
     
+    private let refreshControl = UIRefreshControl()
+    
     override func viewDidAppear(_ animated: Bool) {
         let coins = Array(ownedCoins)
         totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_usd) }
@@ -40,8 +42,19 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
         coinHoldingTable.dataSource = self
         coinHoldingTable.delegate = self
         
+        if #available(iOS 10.0, *) {
+            coinHoldingTable.refreshControl = refreshControl
+        } else {
+            coinHoldingTable.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshTickerData(_:)), for: .valueChanged)
+        
         getTickerData(url: TICKER_API, parameters: nil)
 
+    }
+    
+    @objc private func refreshTickerData(_ sender: Any) {
+        getTickerData(url: TICKER_API, parameters: nil)
     }
     
     // MARK: Networking
@@ -60,6 +73,8 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
                             realm.add(coin, update: true)
                         }
                     }
+                self.refreshControl.endRefreshing()
+                
                 } catch let error as NSError {
                     print(error.localizedDescription)
                 }

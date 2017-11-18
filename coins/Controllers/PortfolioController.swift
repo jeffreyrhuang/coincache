@@ -111,6 +111,24 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
         performSegue(withIdentifier: "CoinDetailsController", sender: self)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let deletedCoin = ownedCoins[indexPath.row]
+            if let coin =  realm.object(ofType: Coin.self, forPrimaryKey: deletedCoin.id) {
+                try! realm.write {
+                    coin.isOwned = false
+                    coin.amount = 0.0
+                }
+            }
+            
+            coinHoldingTable.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     // MARK: Segues
     
     @IBAction func cancelAddCoin(unwindSegue: UIStoryboardSegue) {

@@ -26,10 +26,10 @@ class Coin:Object, Mappable {
     @objc dynamic var logo = ""
     
     // Variables set by user
-    @objc dynamic var owned: Bool = false  // FIX: overwritten back to default by api call
+    @objc dynamic var isOwned: Bool = false
     @objc dynamic var amount: Double = 0.0
     
-    // Computed value   // IGNORED PROPERTY IN REALM?
+    // Computed value
     @objc dynamic var value: Double {
         get {
             let x =  price_usd * amount
@@ -39,7 +39,10 @@ class Coin:Object, Mappable {
             self.value = price_usd * amount
         }
     }
-
+    
+    override static func ignoredProperties() -> [String] {
+        return ["value"]
+    }
     
     override static func primaryKey() -> String? {
         return "id"

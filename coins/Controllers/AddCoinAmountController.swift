@@ -22,7 +22,7 @@ class AddCoinAmountController: UIViewController {
             let realm = try Realm()
             if let coin =  realm.object(ofType: Coin.self, forPrimaryKey: addedCoin?.id) {
                 try realm.write {
-                    coin.owned = true
+                    coin.isOwned = true
                     coin.amount = Double(amountTextField.text!)!
                 }
             }

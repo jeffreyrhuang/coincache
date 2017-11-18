@@ -20,7 +20,7 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var totalValueLabel: UILabel!
     
     let realm = try! Realm()
-    lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("owned = true") }()
+    lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("isOwned = true") }()
     var totalValue: Double = 0.0
     
     private let refreshControl = UIRefreshControl()
@@ -28,7 +28,7 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidAppear(_ animated: Bool) {
         let coins = Array(ownedCoins)
         totalValue = coins.reduce(0.0) { $0 + ($1.amount * $1.price_usd) }
-        totalValueLabel.text = "\(totalValue)"
+        totalValueLabel.text = "$" + String(format: "%.2f", totalValue)
         
         self.coinHoldingTable.reloadData()
     }
@@ -70,6 +70,10 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
                     let realm = try Realm()
                     try realm.write {
                         for coin in coinArray! {
+                            if let currentCoin = realm.object(ofType: Coin.self, forPrimaryKey: coin.id) {
+                                coin.isOwned = currentCoin.isOwned
+                                coin.amount = currentCoin.amount
+                            }
                             realm.add(coin, update: true)
                         }
                     }

@@ -13,7 +13,7 @@ import RealmSwift
 class ChartsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let realm = try! Realm()
-    lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("owned = true") }()
+    lazy var ownedCoins: Results<Coin> = { self.realm.objects(Coin.self).filter("isOwned = true") }()
     var coins: [Coin] = []
     
     @IBOutlet weak var pieChart: PieChartView!

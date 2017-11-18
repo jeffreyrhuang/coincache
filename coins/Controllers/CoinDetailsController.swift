@@ -10,14 +10,29 @@ import UIKit
 
 class CoinDetailsController: UIViewController {
     
+    let CHART_API = "https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&e=CCCAGG"
+    
     var selectedCoin: Coin?
 
+    @IBOutlet weak var coinName: UILabel!
+    @IBOutlet weak var availableSupplyData: UILabel!
+    @IBOutlet weak var marketCapData: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        coinName.text = selectedCoin?.name
+        availableSupplyData.text = selectedCoin?.available_supply
+        marketCapData.text = selectedCoin?.market_cap_usd
+        
+        getChartData(url: CHART_API, parameters: nil)
     }
 
+    // MARK: Networking
+    func getChartData(url: String, parameters: [String:String]?) {
+        
+    }
+    
 
     /*
     // MARK: - Navigation

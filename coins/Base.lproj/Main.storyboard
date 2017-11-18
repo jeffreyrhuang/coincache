@@ -575,13 +575,104 @@
                     <view key="view" contentMode="scaleToFill" id="Wbc-n0-IHk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLK-IB-Pfu">
+                                <rect key="frame" x="130" y="101" width="115" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FMr-Zz-8Kv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOF-P8-g6g">
+                                <rect key="frame" x="0.0" y="171" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="xyH-O3-2QD"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WtA-W0-eAc" userLabel="Data Container">
+                                <rect key="frame" x="38" y="391" width="300" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p61-bB-FBt">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Supply" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzm-v5-eBg">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwh-vJ-5ya">
+                                                <rect key="frame" x="150" y="0.0" width="150" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6SB-OI-28I"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4xW-Pm-5t6">
+                                        <rect key="frame" x="0.0" y="50" width="300" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Cap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBN-8a-jZJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SX-7j-uuu">
+                                                <rect key="frame" x="150" y="0.0" width="150" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="aDL-Nd-Luz"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OX-iB-6RQ">
+                                        <rect key="frame" x="0.0" y="100" width="300" height="50"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4xW-Pm-5t6" firstAttribute="top" secondItem="p61-bB-FBt" secondAttribute="bottom" id="24K-8U-nB8"/>
+                                    <constraint firstItem="p61-bB-FBt" firstAttribute="leading" secondItem="WtA-W0-eAc" secondAttribute="leading" id="7BH-bX-5nb"/>
+                                    <constraint firstItem="4xW-Pm-5t6" firstAttribute="leading" secondItem="WtA-W0-eAc" secondAttribute="leading" id="BX2-PB-9K1"/>
+                                    <constraint firstAttribute="trailing" secondItem="4xW-Pm-5t6" secondAttribute="trailing" id="EQY-v1-uiR"/>
+                                    <constraint firstItem="p61-bB-FBt" firstAttribute="top" secondItem="WtA-W0-eAc" secondAttribute="top" id="ODt-SC-3HR"/>
+                                    <constraint firstAttribute="width" constant="300" id="YjL-Un-kMQ"/>
+                                    <constraint firstItem="4xW-Pm-5t6" firstAttribute="top" secondItem="p61-bB-FBt" secondAttribute="bottom" id="hOy-xf-ppX"/>
+                                    <constraint firstAttribute="trailing" secondItem="p61-bB-FBt" secondAttribute="trailing" id="n27-zD-yQX"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iOF-P8-g6g" firstAttribute="top" secondItem="wLK-IB-Pfu" secondAttribute="bottom" constant="20" id="DsO-Wv-ZjC"/>
+                            <constraint firstItem="wLK-IB-Pfu" firstAttribute="top" secondItem="3hx-d4-nk4" secondAttribute="top" constant="37" id="Re7-T7-cRC"/>
+                            <constraint firstItem="WtA-W0-eAc" firstAttribute="top" secondItem="iOF-P8-g6g" secondAttribute="bottom" constant="20" id="UYt-cs-MGs"/>
+                            <constraint firstItem="wLK-IB-Pfu" firstAttribute="leading" secondItem="3hx-d4-nk4" secondAttribute="leading" constant="130" id="Z6H-OW-03P"/>
+                            <constraint firstItem="iOF-P8-g6g" firstAttribute="leading" secondItem="3hx-d4-nk4" secondAttribute="leading" id="jDp-gv-OJx"/>
+                            <constraint firstItem="WtA-W0-eAc" firstAttribute="centerX" secondItem="Wbc-n0-IHk" secondAttribute="centerX" id="kjk-hF-ADn"/>
+                            <constraint firstItem="wLK-IB-Pfu" firstAttribute="centerX" secondItem="iOF-P8-g6g" secondAttribute="centerX" id="z6Z-be-vbS"/>
+                            <constraint firstItem="iOF-P8-g6g" firstAttribute="trailing" secondItem="3hx-d4-nk4" secondAttribute="trailing" id="zYY-KQ-hxO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3hx-d4-nk4"/>
                     </view>
+                    <connections>
+                        <outlet property="availableSupplyData" destination="fwh-vJ-5ya" id="zy3-I9-GvI"/>
+                        <outlet property="coinName" destination="wLK-IB-Pfu" id="r1z-Kl-2fX"/>
+                        <outlet property="marketCapData" destination="4SX-7j-uuu" id="aCL-0e-gba"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhD-PW-g68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="-317"/>
+            <point key="canvasLocation" x="1744.8" y="-317.09145427286359"/>
         </scene>
         <!--Portfolio-->
         <scene sceneID="urP-Np-0iv">

@@ -107,7 +107,6 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCoin = ownedCoins[indexPath.row]
         performSegue(withIdentifier: "CoinDetailsController", sender: self)
     }
     
@@ -146,8 +145,9 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
             let barBtn = UIBarButtonItem()
             barBtn.title = ""
             navigationItem.backBarButtonItem = barBtn
-            
-            coinDetailsController.selectedCoin = sender as? Coin
+            let indexPath = coinHoldingTable.indexPathForSelectedRow!
+            let selectedCoin = ownedCoins[indexPath.row]
+            coinDetailsController.selectedCoin = selectedCoin
         }
     }
 

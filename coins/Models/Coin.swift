@@ -14,7 +14,6 @@ class Coin:Object, Mappable {
     @objc dynamic var id = ""
     @objc dynamic var name = ""
     @objc dynamic var symbol = ""
-    @objc dynamic var rank = ""
     @objc dynamic var price_usd: Double = 0.0
     @objc dynamic var price_btc: Double = 0.0
     @objc dynamic var market_cap_usd = ""
@@ -29,7 +28,7 @@ class Coin:Object, Mappable {
     @objc dynamic var isOwned: Bool = false
     @objc dynamic var amount: Double = 0.0
     
-    // Computed value
+    // Computed value  // remove objc dynamic to make it read-only?
     @objc dynamic var value: Double {
         get {
             let x =  price_usd * amount
@@ -56,7 +55,6 @@ class Coin:Object, Mappable {
         id                  <- map["id"]
         name                <- map["name"]
         symbol              <- map["symbol"]
-        rank                <- map["rank"]
         price_usd           <- (map["price_usd"], TransformOf<Double, String>(fromJSON: {Double($0!)}, toJSON: {$0.map { String($0)}}))
         price_btc           <- (map["price_btc"], TransformOf<Double, String>(fromJSON: {Double($0!)}, toJSON: {$0.map { String($0)}}))
         market_cap_usd      <- map["market_cap_usd"]

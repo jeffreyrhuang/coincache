@@ -465,13 +465,6 @@
                                                         <segue destination="Z1K-0h-bkj" kind="show" identifier="goToCoinAmount" id="aW9-rA-A2m"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q60-bi-uK3">
-                                                    <rect key="frame" x="10" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB9-Ix-VBy">
                                                     <rect key="frame" x="130" y="10" width="148" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -483,7 +476,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="name" destination="GB9-Ix-VBy" id="aSj-jc-a1J"/>
-                                            <outlet property="rank" destination="q60-bi-uK3" id="Kde-Kq-mVb"/>
                                             <outlet property="symbol" destination="fLw-sJ-7N3" id="7ai-yk-Z3a"/>
                                         </connections>
                                     </tableViewCell>

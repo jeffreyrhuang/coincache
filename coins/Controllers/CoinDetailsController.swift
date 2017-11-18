@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class CoinDetailsController: UIViewController {
     
@@ -30,7 +32,18 @@ class CoinDetailsController: UIViewController {
 
     // MARK: Networking
     func getChartData(url: String, parameters: [String:String]?) {
-        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+            response in
+            if response.result.isSuccess {
+                print("Successful call to Chart API")
+                let priceJSON: JSON = JSON(response.result.value!)
+                print(priceJSON["data"])
+            } else {
+                print("Connection Issues")
+            }
+            
+            
+        }
     }
     
 

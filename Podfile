@@ -9,6 +9,7 @@ target 'coins' do
   pod 'ObjectMapper'
   pod 'RealmSwift'
   pod 'Charts'
+  pod 'SwiftyJSON'
 
 end
 

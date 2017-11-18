@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import Charts
 import Alamofire
 import SwiftyJSON
 
 class CoinDetailsController: UIViewController {
     
-    let CHART_API = "https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&e=CCCAGG"
+    let CHART_API = "https://min-api.cryptocompare.com/data/histoday?tsym=USD&e=CCCAGG"
     
     var selectedCoin: Coin?
+    var dataEntries: [ChartDataEntry] = []
 
     @IBOutlet weak var coinName: UILabel!
     @IBOutlet weak var availableSupplyData: UILabel!
     @IBOutlet weak var marketCapData: UILabel!
+    @IBOutlet weak var lineChart: LineChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +29,11 @@ class CoinDetailsController: UIViewController {
         coinName.text = selectedCoin?.name
         availableSupplyData.text = selectedCoin?.available_supply
         marketCapData.text = selectedCoin?.market_cap_usd
+        let fromCoin:String = (selectedCoin?.symbol)!
+        getChartData(url: CHART_API, parameters: ["fsym": fromCoin])
         
-        getChartData(url: CHART_API, parameters: nil)
     }
+    
 
     // MARK: Networking
     func getChartData(url: String, parameters: [String:String]?) {
@@ -36,8 +41,10 @@ class CoinDetailsController: UIViewController {
             response in
             if response.result.isSuccess {
                 print("Successful call to Chart API")
-                let priceJSON: JSON = JSON(response.result.value!)
-                print(priceJSON["data"])
+                let data: JSON = JSON(response.result.value!)["Data"]
+                print(response)
+                print(data)
+                self.updateChartData(jsonData: data)
             } else {
                 print("Connection Issues")
             }
@@ -46,6 +53,28 @@ class CoinDetailsController: UIViewController {
         }
     }
     
+    func updateChartData(jsonData: JSON) {
+        for i in 0..<jsonData.count {
+            let price = jsonData[i]["high"].double!
+            let time = jsonData[i]["time"].double!
+            let dataPoint = ChartDataEntry(x: time, y: price)
+            dataEntries.append(dataPoint)
+            print("now for the data entries")
+            print(dataEntries)
+            let dataSet = LineChartDataSet(values: dataEntries, label: "\((selectedCoin?.name)!)")
+            let data = LineChartData()
+            data.addDataSet(dataSet)
+            data.setDrawValues(false)
+            
+            dataSet.colors = [NSUIColor.blue]
+            dataSet.circleRadius = 0.0
+            
+            lineChart.xAxis.labelPosition = .bottom
+            lineChart.xAxis.drawGridLinesEnabled = false
+            lineChart.data = data
+            lineChart.rightAxis.enabled = false
+        }
+    }
 
     /*
     // MARK: - Navigation

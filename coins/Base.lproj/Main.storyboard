@@ -585,7 +585,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOF-P8-g6g">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOF-P8-g6g" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="171" width="375" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -667,6 +667,7 @@
                     <connections>
                         <outlet property="availableSupplyData" destination="fwh-vJ-5ya" id="zy3-I9-GvI"/>
                         <outlet property="coinName" destination="wLK-IB-Pfu" id="r1z-Kl-2fX"/>
+                        <outlet property="lineChart" destination="iOF-P8-g6g" id="USb-mi-oZF"/>
                         <outlet property="marketCapData" destination="4SX-7j-uuu" id="aCL-0e-gba"/>
                     </connections>
                 </viewController>

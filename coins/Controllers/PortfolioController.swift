@@ -72,6 +72,7 @@ class PortfolioController: UIViewController, UITableViewDataSource, UITableViewD
                         for coin in coinArray! {
                             if let currentCoin = realm.object(ofType: Coin.self, forPrimaryKey: coin.id) {
                                 coin.isOwned = currentCoin.isOwned
+                                coin.isWatched = currentCoin.isWatched
                                 coin.amount = currentCoin.amount
                             }
                             realm.add(coin, update: true)

@@ -176,7 +176,7 @@
         <!--Watchlist-->
         <scene sceneID="ZwL-RD-5l8">
             <objects>
-                <viewController id="o7e-gN-T0C" customClass="WatchListViewController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="o7e-gN-T0C" customClass="WatchlistViewController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T05-rK-2iE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +185,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zKe-w7-TtN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WatchlistCell" id="zKe-w7-TtN">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zKe-w7-TtN" id="kTb-eX-ijs">
@@ -213,14 +213,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="watchListTable" destination="7eX-ip-c36" id="USk-DZ-h5z"/>
+                        <outlet property="watchlistTable" destination="7eX-ip-c36" id="2uC-XB-8h3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTt-6N-Bap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="1127.5862068965519"/>
         </scene>
-        <!--Add to WatchList-->
+        <!--Add to Watchlist-->
         <scene sceneID="jKt-jr-WKr">
             <objects>
                 <tableViewController id="AWx-YC-tdq" sceneMemberID="viewController">
@@ -229,7 +229,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qWu-9f-Shq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddToWatchlistCell" id="qWu-9f-Shq">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qWu-9f-Shq" id="hQD-t5-KwY">
@@ -243,9 +243,16 @@
                             <outlet property="delegate" destination="AWx-YC-tdq" id="GKk-CG-fRc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add to WatchList" id="a2U-dx-Klm"/>
+                    <navigationItem key="navigationItem" title="Add to Watchlist" id="a2U-dx-Klm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DXI-Ij-z4x">
+                            <connections>
+                                <segue destination="XJd-Ly-mzv" kind="unwind" unwindAction="cancelAddToWatchListWithUnwindSegue:" id="FdW-fl-dgB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnP-wD-P8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XJd-Ly-mzv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2518" y="1128"/>
         </scene>
@@ -256,6 +263,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xlm-2H-3Gg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1058823529" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

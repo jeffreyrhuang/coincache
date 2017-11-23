@@ -26,6 +26,7 @@ class Coin:Object, Mappable {
     
     // Variables set by user
     @objc dynamic var isOwned: Bool = false
+    @objc dynamic var isWatched: Bool = false
     @objc dynamic var amount: Double = 0.0
     
     // Computed value  // remove objc dynamic to make it read-only?

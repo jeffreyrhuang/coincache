@@ -1,5 +1,5 @@
 //
-//  WatchListViewController.swift
+//  AddWatchListViewController.swift
 //  coins
 //
 //  Created by Jeff on 11/19/17.
@@ -8,12 +8,8 @@
 
 import UIKit
 
-class WatchListViewController: UIViewController {
-    
-    @IBOutlet weak var watchListTable: UITableView!
-    
-    
-    
+class AddToWatchlistViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

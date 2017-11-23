@@ -1,5 +1,5 @@
 //
-//  AddWatchListViewController.swift
+//  WatchListViewController.swift
 //  coins
 //
 //  Created by Jeff on 11/19/17.
@@ -8,8 +8,11 @@
 
 import UIKit
 
-class AddWatchListViewController: UIViewController {
-
+class WatchlistViewController: UIViewController {
+ 
+    @IBOutlet weak var watchlistTable: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,5 +34,11 @@ class AddWatchListViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Segues
+    
+    @IBAction func cancelAddToWatchList(unwindSegue: UIStoryboardSegue) {
+        
+    }
 
 }

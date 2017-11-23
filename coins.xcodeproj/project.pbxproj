@@ -10,8 +10,8 @@
 		1F4019121FB3D8A900C6CF1D /* AddCoinAmountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4019111FB3D8A900C6CF1D /* AddCoinAmountController.swift */; };
 		1F5BDF901FB690F4006D83BC /* ChartCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5BDF8F1FB690F4006D83BC /* ChartCoinCell.swift */; };
 		1F5E60DD1FAEA87F004B96C9 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5E60DC1FAEA87F004B96C9 /* Coin.swift */; };
-		1F632B181FC2748200C22A40 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632B171FC2748200C22A40 /* WatchListViewController.swift */; };
-		1F632B1A1FC274E600C22A40 /* AddWatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632B191FC274E600C22A40 /* AddWatchListViewController.swift */; };
+		1F632B181FC2748200C22A40 /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632B171FC2748200C22A40 /* WatchlistViewController.swift */; };
+		1F632B1A1FC274E600C22A40 /* AddToWatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F632B191FC274E600C22A40 /* AddToWatchlistViewController.swift */; };
 		1F7A49DA1FA18D9900C4C1A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A49D91FA18D9900C4C1A5 /* AppDelegate.swift */; };
 		1F7A49DC1FA18D9900C4C1A5 /* PortfolioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A49DB1FA18D9900C4C1A5 /* PortfolioController.swift */; };
 		1F7A49DE1FA18D9900C4C1A5 /* ChartsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A49DD1FA18D9900C4C1A5 /* ChartsController.swift */; };
@@ -29,8 +29,8 @@
 		1F4019111FB3D8A900C6CF1D /* AddCoinAmountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinAmountController.swift; sourceTree = "<group>"; };
 		1F5BDF8F1FB690F4006D83BC /* ChartCoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCoinCell.swift; sourceTree = "<group>"; };
 		1F5E60DC1FAEA87F004B96C9 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
-		1F632B171FC2748200C22A40 /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
-		1F632B191FC274E600C22A40 /* AddWatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchListViewController.swift; sourceTree = "<group>"; };
+		1F632B171FC2748200C22A40 /* WatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
+		1F632B191FC274E600C22A40 /* AddToWatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWatchlistViewController.swift; sourceTree = "<group>"; };
 		1F7A49D61FA18D9900C4C1A5 /* coins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7A49D91FA18D9900C4C1A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F7A49DB1FA18D9900C4C1A5 /* PortfolioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioController.swift; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 				1F7A49DD1FA18D9900C4C1A5 /* ChartsController.swift */,
 				1FD688801FAA74A3004E6DC2 /* CoinDetailsController.swift */,
 				1F7A49DB1FA18D9900C4C1A5 /* PortfolioController.swift */,
-				1F632B171FC2748200C22A40 /* WatchListViewController.swift */,
-				1F632B191FC274E600C22A40 /* AddWatchListViewController.swift */,
+				1F632B171FC2748200C22A40 /* WatchlistViewController.swift */,
+				1F632B191FC274E600C22A40 /* AddToWatchlistViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -283,13 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F632B1A1FC274E600C22A40 /* AddWatchListViewController.swift in Sources */,
+				1F632B1A1FC274E600C22A40 /* AddToWatchlistViewController.swift in Sources */,
 				1F5E60DD1FAEA87F004B96C9 /* Coin.swift in Sources */,
 				1F7A49DE1FA18D9900C4C1A5 /* ChartsController.swift in Sources */,
 				1F7A49DA1FA18D9900C4C1A5 /* AppDelegate.swift in Sources */,
 				1F4019121FB3D8A900C6CF1D /* AddCoinAmountController.swift in Sources */,
 				1FD688811FAA74A3004E6DC2 /* CoinDetailsController.swift in Sources */,
-				1F632B181FC2748200C22A40 /* WatchListViewController.swift in Sources */,
+				1F632B181FC2748200C22A40 /* WatchlistViewController.swift in Sources */,
 				1F5BDF901FB690F4006D83BC /* ChartCoinCell.swift in Sources */,
 				1F8B4B291FA628BA0034ECC9 /* CoinHoldingCell.swift in Sources */,
 				1FDB48A01FB0A8AA00BB5773 /* AddCoinController.swift in Sources */,

@@ -33,7 +33,7 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
 
     }
     
-    // Mark: - Delegate
+    // MARK: - Delegate
     
     func coinAdded(sender: AddCoinCell) {
         if let indexPath = addCoinTable.indexPath(for: sender) {
@@ -48,7 +48,7 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
         }
     }
 
-    // Mark: - Search bar
+    // MARK: - Search bar
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
@@ -67,12 +67,10 @@ class AddCoinController: UIViewController, UITableViewDataSource, UITableViewDel
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if isSearching {
             return filteredCoins!.count
         }

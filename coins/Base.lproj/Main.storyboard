@@ -208,7 +208,7 @@
                     <navigationItem key="navigationItem" title="Watchlist" id="4Nr-JU-3Cx">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ond-bT-ohC">
                             <connections>
-                                <segue destination="g8r-56-8TS" kind="presentation" id="2JD-st-kuQ"/>
+                                <segue destination="jcI-WP-cyM" kind="presentation" id="qDd-iZ-swf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -220,62 +220,65 @@
             </objects>
             <point key="canvasLocation" x="708" y="1127.5862068965519"/>
         </scene>
-        <!--Add to Watchlist-->
-        <scene sceneID="jKt-jr-WKr">
+        <!--Add To Watchlist-->
+        <scene sceneID="QWt-r7-0s4">
             <objects>
-                <tableViewController id="AWx-YC-tdq" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pgL-Ma-qYH">
+                <viewController id="aPv-ei-TJz" customClass="AddToWatchlistViewController" customModule="coins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ndv-xv-G8M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddToWatchlistCell" id="qWu-9f-Shq">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qWu-9f-Shq" id="hQD-t5-KwY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="AWx-YC-tdq" id="Km9-XN-qg9"/>
-                            <outlet property="delegate" destination="AWx-YC-tdq" id="GKk-CG-fRc"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Add to Watchlist" id="a2U-dx-Klm">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DXI-Ij-z4x">
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search by name" translatesAutoresizingMaskIntoConstraints="NO" id="8kQ-T0-Zpm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="K3T-Fo-GIz"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-un-jl3">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WatchCoinCell" id="SCF-bq-U8q" customClass="WatchCoinCell" customModule="coins" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SCF-bq-U8q" id="WbD-GI-MhQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bAd-un-jl3" firstAttribute="leading" secondItem="Zh6-o5-gre" secondAttribute="leading" id="4AX-PM-IEc"/>
+                            <constraint firstItem="bAd-un-jl3" firstAttribute="top" secondItem="8kQ-T0-Zpm" secondAttribute="bottom" id="6yB-fA-QGi"/>
+                            <constraint firstItem="8kQ-T0-Zpm" firstAttribute="top" secondItem="Zh6-o5-gre" secondAttribute="top" id="7ee-wA-DKA"/>
+                            <constraint firstItem="bAd-un-jl3" firstAttribute="trailing" secondItem="Zh6-o5-gre" secondAttribute="trailing" id="IEI-hy-yV8"/>
+                            <constraint firstItem="bAd-un-jl3" firstAttribute="top" secondItem="8kQ-T0-Zpm" secondAttribute="bottom" id="dlZ-00-gGv"/>
+                            <constraint firstItem="bAd-un-jl3" firstAttribute="bottom" secondItem="Zh6-o5-gre" secondAttribute="bottom" id="qxE-Xl-icJ"/>
+                            <constraint firstItem="8kQ-T0-Zpm" firstAttribute="leading" secondItem="Zh6-o5-gre" secondAttribute="leading" id="rhH-ta-Cks"/>
+                            <constraint firstItem="8kQ-T0-Zpm" firstAttribute="trailing" secondItem="Zh6-o5-gre" secondAttribute="trailing" id="sbc-uH-1Di"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zh6-o5-gre"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add To Watchlist" id="ENL-dC-Mbm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="TWZ-4b-OTL">
                             <connections>
-                                <segue destination="XJd-Ly-mzv" kind="unwind" unwindAction="cancelAddToWatchListWithUnwindSegue:" id="FdW-fl-dgB"/>
+                                <segue destination="fwx-OO-fQA" kind="unwind" unwindAction="cancelAddToWatchListWithUnwindSegue:" id="c8f-lx-GP5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MnP-wD-P8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="XJd-Ly-mzv" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2518" y="1128"/>
-        </scene>
-        <!--WatchList-->
-        <scene sceneID="DjF-UD-T34">
-            <objects>
-                <navigationController title="WatchList" id="g8r-56-8TS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xlm-2H-3Gg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.1058823529" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
                     <connections>
-                        <segue destination="AWx-YC-tdq" kind="relationship" relationship="rootViewController" id="CJX-kA-qNc"/>
+                        <outlet property="addToWatchlistTable" destination="bAd-un-jl3" id="U9K-ec-bdT"/>
+                        <outlet property="searchBar" destination="8kQ-T0-Zpm" id="oYe-Sw-IAb"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P4s-hc-g9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4oY-Cc-OMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fwx-OO-fQA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="1128"/>
+            <point key="canvasLocation" x="2466" y="1128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WzJ-iz-hwR">
@@ -874,6 +877,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEr-rp-cQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-74" y="1128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qW1-5v-5LQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jcI-WP-cyM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MRD-gP-ndq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.1058823529" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aPv-ei-TJz" kind="relationship" relationship="rootViewController" id="fEJ-x0-ZCB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Im-no-LYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="1128"/>
         </scene>
     </scenes>
     <resources>

@@ -22,6 +22,7 @@
 		1FD688811FAA74A3004E6DC2 /* CoinDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD688801FAA74A3004E6DC2 /* CoinDetailsController.swift */; };
 		1FDB489E1FB0A84100BB5773 /* AddCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB489D1FB0A84100BB5773 /* AddCoinCell.swift */; };
 		1FDB48A01FB0A8AA00BB5773 /* AddCoinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB489F1FB0A8AA00BB5773 /* AddCoinController.swift */; };
+		1FF5F3E21FC7B7B400640484 /* WatchCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5F3E11FC7B7B400640484 /* WatchCoinCell.swift */; };
 		AF331BCB5519A562A5063D93 /* Pods_coins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E071B85EE05ABD5B6FD5CB70 /* Pods_coins.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		1FD688801FAA74A3004E6DC2 /* CoinDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsController.swift; sourceTree = "<group>"; };
 		1FDB489D1FB0A84100BB5773 /* AddCoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinCell.swift; sourceTree = "<group>"; };
 		1FDB489F1FB0A8AA00BB5773 /* AddCoinController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinController.swift; sourceTree = "<group>"; };
+		1FF5F3E11FC7B7B400640484 /* WatchCoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCoinCell.swift; sourceTree = "<group>"; };
 		455D9A078ADC4D56500CEB3B /* Pods-coins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coins.release.xcconfig"; path = "Pods/Target Support Files/Pods-coins/Pods-coins.release.xcconfig"; sourceTree = "<group>"; };
 		9C03D6A566C2368B67831419 /* Pods-coins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coins/Pods-coins.debug.xcconfig"; sourceTree = "<group>"; };
 		E071B85EE05ABD5B6FD5CB70 /* Pods_coins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				1F8B4B281FA628BA0034ECC9 /* CoinHoldingCell.swift */,
 				1FDB489D1FB0A84100BB5773 /* AddCoinCell.swift */,
 				1F5BDF8F1FB690F4006D83BC /* ChartCoinCell.swift */,
+				1FF5F3E11FC7B7B400640484 /* WatchCoinCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				1F632B1A1FC274E600C22A40 /* AddToWatchlistViewController.swift in Sources */,
 				1F5E60DD1FAEA87F004B96C9 /* Coin.swift in Sources */,
 				1F7A49DE1FA18D9900C4C1A5 /* ChartsController.swift in Sources */,
+				1FF5F3E21FC7B7B400640484 /* WatchCoinCell.swift in Sources */,
 				1F7A49DA1FA18D9900C4C1A5 /* AppDelegate.swift in Sources */,
 				1F4019121FB3D8A900C6CF1D /* AddCoinAmountController.swift in Sources */,
 				1FD688811FAA74A3004E6DC2 /* CoinDetailsController.swift in Sources */,
